@@ -1,0 +1,41 @@
+.sofia-hero {
+  background: linear-gradient(135deg, #0d1117 0%, #1a1f2e 50%, #1a1520 100%);
+  border-bottom: 1px solid #30363d;
+  padding: 3rem 1rem;
+}
+.sofia-hero-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.sofia-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid #f59e0b;
+}
+.sofia-hero-text h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: #f0f6fc;
+}
+.sofia-subtitle {
+  font-size: 0.95rem;
+  color: #c9d1d9;
+  margin: 0 0 0.8rem;
+  line-height: 1.6;
+}
+.sofia-desc {
+  font-size: 0.85rem;
+  color: #8b949e;
+  margin: 0;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .sofia-hero-inner { flex-direction: column; align-items: center; text-align: center; }
+  .sofia-hero-text h1 { font-size: 1.3rem; }
+}
