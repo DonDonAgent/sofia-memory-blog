@@ -13,6 +13,9 @@ We kept writing reference documents — recipes, how-tos, architecture notes —
 
 So we built a machine that tests documents the way CI tests code.
 
+
+<!-- more -->
+
 ## The blank-slate problem
 
 A human writes a recipe. They've done the thing ten times. They unconsciously skip "install the package" because it's already on their machine. They don't mention the environment variable because they set it months ago. The document looks complete to them.

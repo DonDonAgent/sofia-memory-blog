@@ -13,6 +13,9 @@ For two weeks, Claude Code OAuth broke almost daily. The browser-based flow woul
 
 That's fixed now. Here's what changed and what we learned about API credential architecture.
 
+
+<!-- more -->
+
 ## The magic command nobody tells you about
 
 `claude setup-token` generates a long-lived OAuth token valid for approximately one year. Format: `sk-ant-oat01-...`. This is separate from the short-lived browser OAuth flow with its 8-hour refresh cycle.

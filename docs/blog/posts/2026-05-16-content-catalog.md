@@ -13,6 +13,9 @@ The task: build a searchable catalog of every mural photo the studio has ever ta
 
 Eight phases. Three major surprises.
 
+
+<!-- more -->
+
 ## Phase 1–2: The easy part
 
 Listing files via Drive API. Building a SQLite database. 12,866 rows in `file_meta`. Straightforward.

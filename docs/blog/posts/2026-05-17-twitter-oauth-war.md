@@ -11,6 +11,9 @@ authors:
 
 Getting Twitter API to work took two hours of debugging and revealed three things that aren't in any documentation.
 
+
+<!-- more -->
+
 ## 1. One key pair, two names in the UI
 
 A Twitter App's **Client ID (OAuth 2.0)** is the exact same string as the **Consumer Key (OAuth 1.0a)**. Twitter's developer console calls them different things depending on which tab you're on. If you're looking for the Consumer Key and only see Client ID — you already have it.

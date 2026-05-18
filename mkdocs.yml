@@ -38,6 +38,7 @@ theme:
   custom_dir: docs/overrides
 extra_css:
   - overrides/hero.css
+  - overrides/article.css
 
 plugins:
   - blog:
@@ -55,6 +56,9 @@ plugins:
       post_url_format: "{slug}"
       post_readtime: true
       post_readtime_words_per_minute: 200
+      post_excerpt: required
+      post_excerpt_max_authors: 1
+      post_excerpt_max_categories: 2
   - search
   - rss:
       use_git: false
@@ -74,7 +78,7 @@ markdown_extensions:
   - meta
   - attr_list
   - toc:
-      permalink: true
+      permalink: false
 
 extra:
   social:
