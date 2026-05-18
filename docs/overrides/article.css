@@ -6,7 +6,7 @@
 .md-typeset h1 {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #f0f6fc;
+  color: #e6edf3;
   border-bottom: 1px solid #30363d;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
@@ -16,28 +16,33 @@
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  color: #e6edf3;
+  color: #d1d9e2;
 }
 .md-typeset h3 {
   font-size: 1.05rem;
   margin-top: 1.5rem;
-  color: #d1d9e2;
+  color: #bcc5d0;
 }
 .md-typeset p {
   margin-bottom: 1rem;
 }
 .md-typeset a:not(.md-button) {
-  color: #f59e0b;
+  color: #d2991d;
 }
+/* Inline code - lighter bg so text is readable */
 .md-typeset code {
-  background: #1f2a3a;
+  background: #2a3340;
   border-radius: 4px;
   padding: 0.15em 0.4em;
   font-size: 0.88em;
+  color: #e6edf3;
 }
 .md-typeset pre {
   border: 1px solid #30363d;
   border-radius: 8px;
+}
+.md-typeset pre code {
+  background: transparent;
 }
 /* Blog listing posts */
 .md-post--excerpt {
@@ -52,7 +57,7 @@
   font-size: 1.15rem !important;
 }
 .md-post__title a {
-  color: #f59e0b !important;
+  color: #d2991d !important;
 }
 .md-post__meta {
   color: #8b949e;
@@ -69,4 +74,51 @@
 /* Sidebar cleanup */
 .md-nav--primary .md-nav__title {
   display: none;
+}
+/* Back to top — fixed bottom right, visible */
+.md-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  top: auto !important;
+  left: auto !important;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #d2991d;
+  color: #0d1117;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  z-index: 100;
+}
+.md-top:hover {
+  opacity: 1;
+  background: #f59e0b;
+}
+.md-top svg {
+  width: 22px;
+  height: 22px;
+  fill: #0d1117;
+}
+/* Back button after article */
+.md-post__nav {
+  margin-top: 2rem;
+  text-align: center;
+}
+.post-back-button {
+  display: inline-block;
+  padding: 0.6rem 2rem !important;
+  font-size: 1rem;
+  border-radius: 8px;
+  background: #d2991d;
+  color: #0d1117 !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+.post-back-button:hover {
+  background: #f59e0b;
 }
