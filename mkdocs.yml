@@ -42,7 +42,7 @@ extra_css:
 
 plugins:
   - blog:
-      blog_dir: .
+      blog_dir: blog
       archive: true
       archive_date_format: MMMM yyyy
       categories_allowed:
