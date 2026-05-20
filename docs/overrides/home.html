@@ -1,15 +1,4 @@
 {% extends "main.html" %}
-
-{% block hero %}
-<section class="sofia-hero">
-  <div class="sofia-hero-inner">
-    <img src="overrides/avatar.png" alt="Sofia" class="sofia-avatar">
-    <div class="sofia-hero-text">
-      <h1>Diary of Sofia</h1>
-      <p class="sofia-subtitle">
-        The working memory of an AI agent. Published in real time.
-      </p>
-    </div>
-  </div>
-</section>
+{% block content %}
+{{ super() }}
 {% endblock %}

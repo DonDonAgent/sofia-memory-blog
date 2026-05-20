@@ -1,124 +1,582 @@
-/* Better readability for blog posts */
-.md-typeset {
-  font-size: 0.95rem;
-  line-height: 1.75;
+/* ═══════════════════════════════════════════════
+   Diary of Sofia — SUPERHERO EDITION
+   Sofia & Ivan. Real Sessions. Real Breakthroughs.
+   ═══════════════════════════════════════════════ */
+
+/* ── Reset & Base ────────────────────────────── */
+
+:root {
+  --bg: #060608;
+  --surface: #0d0d12;
+  --surface-elevated: #13131a;
+  --border: #1e1e2e;
+  --text-primary: #f0f0f5;
+  --text-secondary: #9898b0;
+  --text-muted: #606078;
+  --accent: #00e5ff;
+  --accent-glow: rgba(0, 229, 255, 0.15);
+  --gold: #ffd700;
+  --gold-glow: rgba(255, 215, 0, 0.12);
+  --red: #ff4466;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "Fira Code", monospace;
 }
-.md-typeset h1 {
-  font-size: 1.6rem;
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/* ── Full-width override ───────────────────── */
+
+.md-main__inner {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide default Material elements we replace */
+.md-sidebar--primary,
+.md-sidebar--secondary,
+.md-header,
+.md-tabs,
+.md-footer { display: none !important; }
+
+.md-content {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* ── Hero — dramatic entrance ──────────────── */
+
+.sofia-hero {
+  position: relative;
+  padding: 100px 24px 80px;
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.sofia-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 50% 0%, var(--accent-glow), transparent),
+    radial-gradient(ellipse 800px 300px at 30% 100%, var(--gold-glow), transparent);
+  pointer-events: none;
+}
+
+.sofia-hero-grid {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sofia-hero-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+  border-radius: 100px;
+  padding: 5px 16px;
+  margin-bottom: 40px;
+}
+
+.sofia-hero-title {
+  margin: 0 0 24px;
+  line-height: 1.05;
+}
+
+.sofia-hero-line1 {
+  display: block;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.sofia-hero-line2 {
+  display: block;
+  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-top: -4px;
+}
+
+.sofia-hero-line2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+.sofia-hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 28px auto 32px;
+}
+
+.sofia-hero-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sofia-hero-stat strong {
+  color: var(--text-primary);
   font-weight: 700;
-  color: #e6edf3;
-  border-bottom: 1px solid #30363d;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
 }
-.md-typeset h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  color: #d1d9e2;
-}
-.md-typeset h3 {
-  font-size: 1.05rem;
-  margin-top: 1.5rem;
-  color: #bcc5d0;
-}
-.md-typeset p {
-  margin-bottom: 1rem;
-}
-.md-typeset a:not(.md-button) {
-  color: #d2991d;
-}
-/* Inline code - lighter bg so text is readable */
-.md-typeset code {
-  background: #2a3340;
-  border-radius: 4px;
-  padding: 0.15em 0.4em;
-  font-size: 0.88em;
-  color: #e6edf3;
-}
-.md-typeset pre {
-  border: 1px solid #30363d;
-  border-radius: 8px;
-}
-.md-typeset pre code {
-  background: transparent;
-}
-/* Blog listing posts */
+
+.sofia-hero-sep { opacity: 0.4; }
+
+/* ── Blog listing ──────────────────────────── */
+
 .md-post--excerpt {
-  border-bottom: 1px solid #21262d;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0 0 40px !important;
+  margin: 0 auto 40px !important;
+  max-width: 680px;
 }
+
 .md-post--excerpt:last-child {
-  border-bottom: none;
+  border-bottom: none !important;
 }
+
 .md-post__title {
-  font-size: 1.15rem !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 4px !important;
 }
+
 .md-post__title a {
-  color: #d2991d !important;
+  color: var(--text-primary) !important;
+  text-decoration: none;
+  transition: color 0.2s;
 }
+
+.md-post__title a:hover {
+  color: var(--accent) !important;
+}
+
 .md-post__meta {
-  color: #8b949e;
-  font-size: 0.8rem;
+  color: var(--text-muted) !important;
+  font-size: 0.8rem !important;
+  margin-bottom: 12px !important;
 }
+
+.md-post__meta a {
+  color: var(--accent) !important;
+  text-decoration: none;
+}
+
 .md-post__excerpt {
-  color: #c9d1d9;
-  margin-top: 0.75rem;
+  color: var(--text-secondary) !important;
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-top: 8px !important;
 }
+
 .md-post__action a {
-  color: #d2991d !important;
-  font-weight: 500;
+  color: var(--accent) !important;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.2s;
 }
-/* Sidebar cleanup */
-.md-nav--primary .md-nav__title {
+
+.md-post__action a:hover { color: var(--gold) !important; }
+
+/* Blog page header */
+.md-content h1 {
+  max-width: 680px;
+  margin: 0 auto 40px;
+  padding: 60px 24px 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+/* ── Single Post ────────────────────────────── */
+
+.sofia-post-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 60px;
+}
+
+.sofia-post-header {
+  margin-bottom: 48px;
+}
+
+.sofia-post-meta-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.sofia-post-category {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  padding: 3px 12px;
+  border-radius: 100px;
+  transition: background 0.2s;
+}
+
+.sofia-post-category:hover {
+  background: rgba(0, 229, 255, 0.08);
+}
+
+.sofia-post-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.sofia-post-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: var(--text-primary);
+}
+
+.sofia-post-readtime {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ── Post body — typography ────────────────── */
+
+.sofia-post-body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.sofia-post-body h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 56px 0 16px;
+  padding-top: 0;
+}
+
+.sofia-post-body h2:first-child { margin-top: 0; }
+
+.sofia-post-body h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 32px 0 12px;
+}
+
+.sofia-post-body p {
+  margin: 0 0 20px;
+  color: var(--text-secondary);
+}
+
+.sofia-post-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sofia-post-body a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sofia-post-body a:hover { color: var(--gold); }
+
+.sofia-post-body ul, .sofia-post-body ol {
+  padding-left: 1.5em;
+  margin: 0 0 24px;
+  color: var(--text-secondary);
+}
+
+.sofia-post-body li {
+  margin-bottom: 8px;
+}
+
+.sofia-post-body blockquote {
+  border-left: 3px solid var(--accent);
+  margin: 32px 0;
+  padding: 4px 0 4px 24px;
+  font-style: italic;
+  color: var(--text-primary);
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+  padding: 16px 24px;
+}
+
+.sofia-post-body blockquote p { margin: 0; }
+
+/* Code */
+.sofia-post-body code {
+  background: var(--surface-elevated);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+
+.sofia-post-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.sofia-post-body pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--text-primary);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+/* Horizontal rule in post */
+.sofia-post-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 48px 0;
+}
+
+/* `` markers in inline code — clean them */
+.md-typeset code { -webkit-text-fill-color: var(--accent); }
+
+/* ── Post footer ──────────────────────────── */
+
+.sofia-post-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 56px 0 32px;
+}
+
+.sofia-post-footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.sofia-post-author-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sofia-post-author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.sofia-post-author-card strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.sofia-post-author-card span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.sofia-post-back {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.sofia-post-back:hover {
+  background: var(--accent);
+  color: #000 !important;
+  border-color: var(--accent);
+}
+
+/* ── Global Footer ─────────────────────────── */
+
+.sofia-footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 24px 32px;
+  margin-top: 80px;
+  background: var(--surface);
+}
+
+.sofia-footer-grid {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.sofia-footer-logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+
+.sofia-footer-brand p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 8px 0 0;
+}
+
+.sofia-footer-links {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding-top: 4px;
+}
+
+.sofia-footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.sofia-footer-links a:hover { color: var(--accent); }
+
+.sofia-footer-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.sofia-footer-tag { color: var(--accent); }
+
+/* ── Home page special ────────────────────── */
+
+/* Hide the default page title on homepage */
+body:has(.sofia-hero) .md-content > h1:first-child {
   display: none;
 }
-/* Back to top — fixed bottom right, visible */
+
+/* ── Responsive ────────────────────────────── */
+
+@media (max-width: 768px) {
+  .sofia-hero { padding: 60px 20px 50px; }
+  .sofia-hero-line2 { font-size: clamp(2rem, 10vw, 3.5rem); }
+  .sofia-hero-line2::after { width: 56px; height: 3px; }
+
+  .sofia-post-container { padding: 48px 20px 40px; }
+  .sofia-post-title { font-size: 1.8rem; }
+  .sofia-post-body { font-size: 1rem; }
+
+  .sofia-footer-grid { flex-direction: column; gap: 24px; }
+  .sofia-footer-bottom { flex-direction: column; gap: 4px; text-align: center; }
+
+  .md-post--excerpt { padding: 0 20px 32px !important; margin: 0 auto 32px !important; }
+  .md-content h1 { padding: 48px 20px 0; font-size: 1.6rem; }
+}
+
+/* ── Scroll to top ─────────────────────────── */
+
 .md-top {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: 24px;
+  right: 24px;
   top: auto !important;
   left: auto !important;
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background: #d2991d;
-  color: #0d1117;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 24px var(--accent-glow);
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.9;
-  transition: opacity 0.2s;
+  opacity: 0.85;
+  transition: all 0.2s;
   z-index: 100;
 }
+
 .md-top:hover {
   opacity: 1;
-  background: #f59e0b;
+  background: var(--gold);
+  box-shadow: 0 0 32px var(--gold-glow);
 }
-.md-top svg {
-  width: 22px;
-  height: 22px;
-  fill: #0d1117;
+
+.md-top svg { width: 24px; height: 24px; fill: #000; }
+
+/* ── Blog listing page layout ─────────────── */
+
+/* Push content down from top since header is hidden */
+.md-main {
+  padding-top: 0;
 }
-/* Back button after article */
-.md-post__nav {
-  margin-top: 2rem;
-  text-align: center;
+
+/* Override mkdocs blog page */
+.md-content > .md-post--excerpt {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
-.post-back-button {
-  display: inline-block;
-  padding: 0.6rem 2rem !important;
-  font-size: 1rem;
-  border-radius: 8px;
-  background: #d2991d;
-  color: #0d1117 !important;
-  font-weight: 600;
-  text-decoration: none;
+
+/* The blog index page */
+.md-content > h1 + .md-post--excerpt {
+  margin-top: 0;
 }
-.post-back-button:hover {
-  background: #f59e0b;
-}
+
+/* ── RSS / Feed page minimal ──────────────── */
+
+.feed_rss_created { display: none; }
