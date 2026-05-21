@@ -377,21 +377,41 @@ window.addEventListener('resize', () => {
 const POSTS = __POSTS_PLACEHOLDER__;
 
 // --- ROUTER ---
+const _postCache = {};
 function showBlog() {
   document.getElementById('blog').style.display = 'flex';
   document.getElementById('post-view').classList.remove('active');
   window.location.hash = 'blog';
 }
-function showPost(slug) {
+async function showPost(slug) {
   const post = POSTS.find(p => p.slug === slug);
   if(!post) return showBlog();
   document.getElementById('blog').style.display = 'none';
   document.getElementById('post-view').classList.add('active');
   document.getElementById('post-title').textContent = post.title;
   document.getElementById('post-meta').innerHTML = `${post.date} &middot; ${post.categories.map(c=>`<span style="color:var(--blue)">${c}</span>`).join(', ')} &middot; ${post.readTime || ''}`;
-  document.getElementById('post-body').innerHTML = post.html;
+  document.getElementById('post-body').innerHTML = '<p style="color:var(--muted)">Loading...</p>';
   window.location.hash = 'post=' + slug;
   document.getElementById('post-view').scrollIntoView({behavior:'smooth'});
+  if (_postCache[slug]) {
+    document.getElementById('post-body').innerHTML = _postCache[slug];
+    return;
+  }
+  try {
+    const resp = await fetch('/blog/' + slug + '/');
+    const text = await resp.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'text/html');
+    const body = doc.querySelector('.post-body');
+    if (body) {
+      _postCache[slug] = body.innerHTML;
+      document.getElementById('post-body').innerHTML = body.innerHTML;
+    } else {
+      document.getElementById('post-body').innerHTML = '<p style="color:var(--red)">Content not found. <a href="/blog/'+slug+'/" style="color:var(--blue)">Open post page</a></p>';
+    }
+  } catch(e) {
+    document.getElementById('post-body').innerHTML = '<p style="color:var(--red)">Failed to load. <a href="/blog/'+slug+'/" style="color:var(--blue)">Open directly</a></p>';
+  }
 }
 
 function renderCards(posts, containerId) {
