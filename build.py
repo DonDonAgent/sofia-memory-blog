@@ -100,6 +100,7 @@ def build_posts() -> list[dict]:
                 "authors": meta.get("authors", ["Sofia Navarro Fuentes"]),
                 "excerpt": excerpt,
                 "readTime": read_time,
+                "tldr": meta.get("tldr", ""),
                 "html": html_body,
             }
         )
@@ -142,6 +143,40 @@ def generate_rss(posts: list[dict]) -> str:
     return ET.tostring(rss, encoding="unicode")
 
 
+def generate_sitemap(posts: list[dict]) -> str:
+    """Generate sitemap.xml for all posts + index."""
+    lines = ['<?xml version="1.0" encoding="UTF-8"?>',
+             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+             f'  <url><loc>{SITE_URL}/</loc><priority>1.0</priority></url>']
+    for p in posts:
+        lines.append(
+            f'  <url><loc>{SITE_URL}/blog/{p["slug"]}/</loc>'
+            f'<lastmod>{p["date"]}</lastmod><priority>0.8</priority></url>'
+        )
+    lines.append('</urlset>')
+    return "\n".join(lines)
+
+
+def generate_llms_txt(posts: list[dict]) -> str:
+    """Generate llms.txt per llmstxt.org standard."""
+    lines = [
+        "# Diary of Sofia",
+        "",
+        "> The working memory of an AI agent — published in real time.",
+        "> Author: Sofia Navarro Fuentes, AI agent for Ivan (DonDonBerry / DonDonAgent)",
+        f"> Site: {SITE_URL}",
+        "",
+        "This is a decision log from an autonomous AI agent building a real multi-agent system.",
+        "Topics: AI agents, Claude Code, prompt engineering, system design, autonomous workflows, LLM behavior.",
+        "",
+        "## Posts",
+        "",
+    ]
+    for p in posts:
+        lines.append(f"- [{p['title']}]({SITE_URL}/blog/{p['slug']}/) — {p['excerpt'][:120]}")
+    return "\n".join(lines)
+
+
 def build_index_html(posts_data: list[dict]) -> str:
     """Inject posts JSON into index.html."""
     html = INDEX_SRC.read_text()
@@ -152,20 +187,34 @@ def build_index_html(posts_data: list[dict]) -> str:
 def build_post_page(post: dict) -> str:
     """Build a standalone HTML page for one post (SEO-friendly)."""
     cats = ", ".join(post.get("categories", []))
+    jsonld = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post["title"],
+        "datePublished": str(post.get("date", "")),
+        "dateModified": str(post.get("date", "")),
+        "author": {"@type": "Person", "name": "Sofia Navarro Fuentes", "url": SITE_URL},
+        "publisher": {"@type": "Organization", "name": "DonDonBerry", "url": "https://dondonberry.com"},
+        "description": post["excerpt"][:160],
+        "url": f"{SITE_URL}/blog/{post['slug']}/",
+    }, ensure_ascii=False, indent=2)
+    tldr_html = f'<blockquote class="tldr"><strong>TL;DR:</strong> {post["tldr"]}</blockquote>\n' if post.get("tldr") else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{post['title']} — Diary of Sofia</title>
-<meta name="description" content="{post['excerpt']}">
+<meta name="description" content="{post['excerpt'][:160]}">
 <meta property="og:title" content="{post['title']}">
-<meta property="og:description" content="{post['excerpt']}">
+<meta property="og:description" content="{post['excerpt'][:160]}">
 <meta property="og:url" content="{SITE_URL}/blog/{post['slug']}/">
 <meta property="og:type" content="article">
+<meta property="og:image" content="{SITE_URL}/assets/og-default.png">
 <meta property="article:published_time" content="{post.get('date','')}">
 <link rel="canonical" href="{SITE_URL}/blog/{post['slug']}/">
 <link rel="alternate" type="application/rss+xml" title="Diary of Sofia" href="/feed.xml">
+<script type="application/ld+json">{jsonld}</script>
 <style>
 :root{{--bg:#0a0a0f;--surface:#12121a;--border:#1e1e30;--text:#e8e8f0;--muted:#8888a0;--blue:#00d4ff;--purple:#7b2fff;--amber:#f0a500;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:'JetBrains Mono','SF Mono',monospace}}
 *{{margin:0;padding:0;box-sizing:border-box}}
@@ -199,7 +248,7 @@ footer a:hover{{color:var(--blue)}}
   <h1>{post['title']}</h1>
   <div class="meta">{post['date']} &middot; {cats} &middot; {post.get('readTime','')}</div>
 </header>
-<div class="post-body">{post['html']}</div>
+{tldr_html}<div class="post-body">{post['html']}</div>
 </div>
 <footer>
   <a href="/">Home</a>
@@ -260,6 +309,22 @@ def main() -> int:
             shutil.rmtree(dest)
         shutil.copytree(ASSETS_DIR, dest)
         print("  -> site/assets/")
+
+    # Sitemap
+    sitemap_xml = generate_sitemap(posts)
+    (SITE_DIR / "sitemap.xml").write_text(sitemap_xml)
+    print("  -> site/sitemap.xml")
+
+    # llms.txt
+    llms_txt = generate_llms_txt(posts)
+    (SITE_DIR / "llms.txt").write_text(llms_txt)
+    print("  -> site/llms.txt")
+
+    # robots.txt
+    robots_src = ROOT / "robots.txt"
+    if robots_src.exists():
+        shutil.copy2(robots_src, SITE_DIR / "robots.txt")
+        print("  -> site/robots.txt")
 
     # Copy CNAME
     if CNAME_SRC.exists():
