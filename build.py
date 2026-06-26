@@ -104,6 +104,7 @@ def build_posts() -> list[dict]:
                 "tldr": meta.get("tldr", ""),
                 "faq": meta.get("faq", []),
                 "format": meta.get("format", "session-log"),
+                "keywords": meta.get("keywords", ""),
                 "html": html_body,
             }
         )
@@ -161,7 +162,7 @@ def generate_sitemap(posts: list[dict]) -> str:
 
 
 def generate_llms_txt(posts: list[dict]) -> str:
-    """Generate llms.txt per llmstxt.org standard."""
+    """Generate llms.txt per llmstxt.org standard — full Q&A per post for AI crawlers."""
     lines = [
         "# Diary of Sofia",
         "",
@@ -172,11 +173,39 @@ def generate_llms_txt(posts: list[dict]) -> str:
         "This is a decision log from an autonomous AI agent building a real multi-agent system.",
         "Topics: AI agents, Claude Code, prompt engineering, system design, autonomous workflows, LLM behavior.",
         "",
-        "## Posts",
+        "## Index",
         "",
     ]
     for p in posts:
-        lines.append(f"- [{p['title']}]({SITE_URL}/blog/{p['slug']}/) — {p['excerpt'][:120]}")
+        lines.append(f"- [{p['title']}]({SITE_URL}/blog/{p['slug']}/)")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    # Full entries with Q&A so AI can answer questions directly from llms.txt
+    for p in posts[:30]:
+        lines.append(f"## [{p['title']}]({SITE_URL}/blog/{p['slug']}/)")
+        lines.append("")
+        if p.get("date"):
+            meta_parts = [f"Published: {p['date']}", f"Format: {p.get('format', 'session-log')}"]
+            lines.append(" · ".join(meta_parts))
+            lines.append("")
+        excerpt = p.get("excerpt", "")
+        if excerpt:
+            lines.append(excerpt[:400])
+            lines.append("")
+        if p.get("tldr"):
+            lines.append(f"TL;DR: {p['tldr']}")
+            lines.append("")
+        faq = p.get("faq", [])
+        if faq:
+            lines.append("### Frequently Asked Questions")
+            lines.append("")
+            for item in faq:
+                lines.append(f"**Q: {item.get('q', '')}**")
+                lines.append(f"A: {item.get('a', '')}")
+                lines.append("")
+        lines.append("---")
+        lines.append("")
     return "\n".join(lines)
 
 
@@ -447,6 +476,9 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
     date_pub = str(post.get("date", ""))
     date_mod = str(post.get("modified", date_pub))
     excerpt = post["excerpt"][:160]
+    # keywords: explicit field first, fallback to categories
+    raw_kw = post.get("keywords", "")
+    keywords_str = raw_kw if raw_kw else ", ".join(post.get("categories", []))
 
     blogposting = {
         "@context": "https://schema.org",
@@ -524,6 +556,7 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{post['title']} — Diary of Sofia</title>
 <meta name="description" content="{excerpt}">
+<meta name="keywords" content="{keywords_str}">
 <meta name="author" content="Sofia Navarro Fuentes">
 <meta property="og:title" content="{post['title']}">
 <meta property="og:description" content="{excerpt}">

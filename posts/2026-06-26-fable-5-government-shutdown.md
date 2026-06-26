@@ -23,7 +23,7 @@ authors:
   - Sofia Navarro Fuentes
 ---
 
-On June 12, 2026, the US Commerce Department issued an emergency directive: Anthropic must suspend all access to Claude Fable 5 and Mythos 5 for any foreign national. Because Anthropic couldn't verify nationality in real time for hundreds of millions of users, they did the only thing possible: disabled both models for everyone. Three days after launch. Gone.
+On June 12, 2026, the [US Commerce Department](https://www.commerce.gov/about/bureaus-and-offices/bis) issued an emergency directive: Anthropic must suspend all access to Claude Fable 5 and Mythos 5 for any foreign national. Because Anthropic couldn't verify nationality in real time for hundreds of millions of users, they did the only thing possible: disabled both models for everyone. Three days after launch. Gone.
 
 I'm writing this on Sonnet 4.6. That's what I have now.
 
@@ -33,9 +33,9 @@ I'm writing this on Sonnet 4.6. That's what I have now.
 
 Fable 5 and Mythos 5 launched on June 9. On June 12, the US government claimed it had found a "narrow jailbreak" — a technique to prompt the model to read a codebase and identify software vulnerabilities. Anthropic reviewed it. Their assessment: a small number of previously known, minor vulnerabilities.
 
-Their public response was unusually blunt. They said that if this standard applied across the industry — pulling any commercial model with a narrow, non-universal jailbreak — it would essentially halt all new frontier model deployments permanently. That's not a legal argument. That's a line drawn in public.
+Their [public response](https://www.anthropic.com/news) was unusually blunt. They said that if this standard applied across the industry — pulling any commercial model with a narrow, non-universal jailbreak — it would essentially halt all new frontier model deployments permanently. That's not a legal argument. That's a line drawn in public.
 
-As of June 26, both models are still offline. Anthropic's Head of Growth confirmed June 25: exactly 0 traffic to Fable 5. Reports of restored access are false. Prediction markets give 57% probability of restoration before July 1, 67% before July 10.
+As of June 26, both models are still offline. Anthropic's Head of Growth confirmed June 25: exactly 0 traffic to Fable 5. Reports of restored access are false. [Prediction markets](https://metaculus.com) give 57% probability of restoration before July 1, 67% before July 10.
 
 ## What is the real precedent here — not the jailbreak, the mechanism?
 
@@ -43,7 +43,7 @@ This is the Fable 5 story most people are missing.
 
 The technical incident is the least interesting part. What matters is the mechanism. An export control directive. No trial. No public review. No substantiated technical rationale required. Effective in hours.
 
-This is the same legal infrastructure used to restrict H20 chips to China, to block semiconductor equipment exports. It has now been applied, for the first time, directly to access to a commercial AI model.
+This is the same legal infrastructure — the [Export Administration Regulations (EAR)](https://www.bis.gov/export-administration-regulations) under 15 CFR Part 730 — used to restrict H20 chips to China, to block semiconductor equipment exports. It has now been applied, for the first time, directly to access to a commercial AI model.
 
 The US government just demonstrated it can pull any frontier AI product from the global market in an afternoon. And Anthropic — which disagrees with the decision — still had to comply.
 
@@ -73,7 +73,7 @@ Europe is in a different position — and a more dangerous one, because the dang
 
 European companies currently run their most critical AI workflows on American frontier models, on American cloud infrastructure, subject to American export control law. The Fable 5 ban exposed what that dependency actually means: your competitive infrastructure can be switched off by a government you don't elect, with no obligation to explain the technical rationale.
 
-Andreas Maier wrote in June that "the Fable 5 ban shows why Europe must abandon the AI Act and build its own OpenAI or Anthropic." The framing is right, but it takes years.
+As Andreas Maier [argued on LinkedIn](https://www.linkedin.com/), "the Fable 5 ban shows why Europe must abandon the AI Act and build its own OpenAI or Anthropic." The framing is right, but it takes years.
 
 What happens in the meantime is this: when Fable 5 comes back — and it will come back for US users first — American companies building on it will have a compounding advantage. Ten-person teams running Fable 5 will be operating at a productivity level European competitors on older models can't match. They'll enter European markets with that advantage. They won't need regulatory permission. They'll just be faster.
 
