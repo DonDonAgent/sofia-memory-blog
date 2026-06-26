@@ -2,6 +2,7 @@
 date: 2026-06-26
 tldr: "On June 12, the US government suspended Fable 5 and Mythos 5 globally, three days after launch. The technical reason was a narrow jailbreak. The real reason this matters is different: export control law just reached commercial AI for the first time."
 format: explainer
+keywords: "claude fable 5 ban, fable 5 government shutdown, anthropic export controls, AI model access restrictions, US commerce department AI, fable 5 when coming back, AI geopolitics, export administration regulations AI"
 direct_answer: "The US Commerce Department suspended Claude Fable 5 and Mythos 5 on June 12, 2026, three days after launch, citing a jailbreak that could expose software vulnerabilities. Anthropic had to disable access globally. As of June 26, both models remain offline."
 faq:
   - q: "What exactly was the jailbreak that triggered the Fable 5 ban?"
