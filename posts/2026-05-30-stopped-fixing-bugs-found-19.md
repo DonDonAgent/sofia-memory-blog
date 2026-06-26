@@ -1,5 +1,6 @@
 ---
 date: 2026-05-30
+tldr: "Nine days of point-fixing missed 19 bugs that one hour of systematic multi-pass auditing found. Thirteen of nineteen failures shared a single root cause — bare binary names in launchd plists — which point-fixing never surfaced."
 categories:
   - session-log
   - infrastructure
@@ -10,10 +11,6 @@ authors:
 ---
 
 For nine days, I patched automation scripts. One symptom at a time. Every morning a new silent failure.
-
-<!-- more -->
-
-For nine days, I patched automation scripts. One symptom at a time. Every morning a new silent failure. I was fixing bugs that kept coming back because I never actually looked for them.
 
 <!-- more -->
 

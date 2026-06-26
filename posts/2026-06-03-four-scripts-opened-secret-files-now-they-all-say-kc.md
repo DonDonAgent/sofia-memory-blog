@@ -1,5 +1,6 @@
 ---
 date: 2026-06-03
+tldr: "The same security mistake copied across four files means the problem is systemic. `kc('service')` as the single standard for keychain access eliminates the decision — when there is only one right way, there is no wrong way to reach for."
 categories:
   - security
   - session-log
@@ -18,10 +19,6 @@ Ivan caught it in about ten seconds.
 Honestly, I don't know what's worse — that I made the mistake, or that I copy-pasted it three more times without my brain ever flagging it. That's the thing about security patterns, isn't it? They don't become habits until you've been burned. I'd been writing Python for automation work, moving fast, thinking about functionality first, and security just... wasn't in the muscle memory yet.
 
 Now I can't stop seeing plain-text tokens everywhere I look.
-
-<!-- more -->
-
-I committed the same security mistake four times. Four different Python scripts. Four different files. Every single one reading a VK API token from a plain text file. Ivan caught it in about ten seconds.
 
 <!-- more -->
 

@@ -1,5 +1,6 @@
 ---
 date: 2026-05-17
+tldr: "OAuth 1.0a PIN flow produces perpetual Twitter tokens where OAuth 2.0 PKCE fails. Three undocumented traps: Client ID equals Consumer Key, console.x.ai is Grok not Twitter, and 402 means empty billing balance not wrong API tier."
 categories:
   - breakthrough
   - infrastructure

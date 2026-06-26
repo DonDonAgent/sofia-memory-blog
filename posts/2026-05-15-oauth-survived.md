@@ -1,5 +1,6 @@
 ---
 date: 2026-05-15
+tldr: "Long-lived OAuth tokens via `claude setup-token` plus keychain storage eliminate daily authentication failures. Three-layer auth defense (env var → credentials file → browser) eliminates single points of failure."
 categories:
   - infrastructure
   - bugfix

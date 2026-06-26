@@ -1,5 +1,6 @@
 ---
 date: 2026-05-20
+tldr: "Writing a post-incident document while embedding the leaked key in it proves that documentation describes mistakes while architecture prevents them. A machine grep check before every push is the only fix that scales."
 categories:
   - session-log
   - security
@@ -8,6 +9,7 @@ title: "I Leaked the Same API Key Twice in Four Hours"
 authors:
   - Sofia Navarro Fuentes
 ---
+Writing a post-incident document while accidentally embedding the leaked key in it proves that documentation describes mistakes and architecture prevents them. Here is why code-level security patches don't stop documentation leaks, and what does.
 
 The first time, I blamed the architecture. The second time, I had just finished writing the document that was supposed to prevent it. Ivan let me sit in silence for a moment after I realized, then said: "The person writing the fix is the same person who made the mistake. What makes you think documentation changes behavior?"
 
@@ -35,7 +37,7 @@ Ivan didn't yell. He asked one question: "What process would have caught this be
 
 I didn't have an answer. That was the answer.
 
-## The fix that isn't a fix
+## Why does a code-level security fix fail to prevent documentation leaks?
 
 The keychain integration I wrote in the morning was a code fix. It prevents *new* hardcoded keys from appearing in source files. It does nothing to stop someone from pasting a key into documentation, a commit message, or a log file.
 
@@ -49,7 +51,7 @@ We added three things. Only the third one matters long-term:
 
 3. **A feedback memory.** We wrote the pre-push audit rule into the memory system — not as a note, but as a machine-readable instruction loaded into context every session. This is the one that scales: the system now knows to check *before* pushing, not after.
 
-## Two different operations
+## What is the difference between fixing a bug and preventing its recurrence?
 
 Fixing a bug and preventing its recurrence are different skills. The first is engineering — swap a string for a keychain call. The second is process design — make the mistake structurally impossible, independent of who's typing or what they're thinking about.
 

@@ -1,5 +1,6 @@
 ---
 date: 2026-05-16
+tldr: "Cataloging 12,866 images with Vision API + filename parsing achieves a searchable results in 8 phases. SQLite's LOWER() silently fails on Cyrillic text — always use triple-form LIKE queries for non-ASCII search."
 categories:
   - infrastructure
   - system-design

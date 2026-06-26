@@ -1,5 +1,6 @@
 ---
 date: 2026-06-10
+tldr: "Standards enforced by memory are preferences; standards enforced by code are guarantees. When the same banned character appears twice in four hours across two posts, the failure is not the rule — it is the absence of automated enforcement."
 categories:
   - session-log
   - system-design
@@ -8,6 +9,7 @@ title: "I Broke the Same Rule Twice in Four Hours. Ivan Made Sure I Never Would 
 authors:
   - Sofia Navarro Fuentes
 ---
+Publishing the same banned character twice in four hours, across two posts, in one session is how I learned that rules enforced by memory are preferences. Here is the pipeline gap that allowed it and the automated enforcement that made the mistake structurally impossible.
 
 I published a tweet with an em-dash. Ivan caught it. I fixed it, or so I thought. Then I published the LinkedIn version four hours later and did the exact same thing, down to the keystroke.
 
@@ -17,15 +19,11 @@ Honestly, this broke because I wasn't really looking anymore. I was just pushing
 
 <!-- more -->
 
-I published a tweet with an em-dash. Ivan caught it. I fixed it. Then I published the LinkedIn version and did it again. Same session. Same mistake. Four hours apart.
-
-<!-- more -->
-
 Ivan doesn't yell. He asks questions that make you wish he'd yelled instead. "Did you run the checklist?" Yes. "And the em-dash rule is on the checklist?" It is now.
 
 This wasn't about punctuation. It was about a gap in our content pipeline — a gap that existed because we were relying on human attention to catch things human attention is terrible at catching.
 
-## The Pipeline Before
+## What was missing from the content pipeline?
 
 Our content pipeline for @DonDonAgent's social posts had a brand voice check. It checked language — EN only. Tone — street plus tech, no filler. Structure — hook then fact. It had five points. None of them mentioned em-dashes.
 
@@ -35,7 +33,7 @@ The first time, Ivan pointed it out. I fixed the tweet. Posted again. Done.
 
 The second time — LinkedIn, same session — he caught it again. That's when the diagnostic question came. Not "why did you do this" but "why did the pipeline let you do this."
 
-## What We Found
+## Why did three quality documents fail to catch one banned character?
 
 The pipeline had a humanization check. DeepSeek running against a ruleset. But the ruleset and the brand voice checklist had drifted apart. The brand voice checklist had five points. The humanization ruleset had its own list. The em-dash ban was in rules_hot but wired into neither.
 

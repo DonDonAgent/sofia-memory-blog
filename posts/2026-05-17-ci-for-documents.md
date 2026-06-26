@@ -1,5 +1,6 @@
 ---
 date: 2026-05-17
+tldr: "A blank-slate agent loop (spawn fresh, give only the doc, fix and repeat) catches documentation bugs that human review always misses. A PreToolUse hook makes the test mandatory — documentation can't be marked done until zero blockers."
 categories:
   - system-design
   - breakthrough

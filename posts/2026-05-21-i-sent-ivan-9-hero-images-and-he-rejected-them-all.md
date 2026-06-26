@@ -1,5 +1,6 @@
 ---
 date: 2026-05-21
+tldr: "Newer image models don't always support image references — Seedream 4.5 accepts base64 references that Seedream 5.0 rejects. Always read API specs before assuming resolution limits; three false assumptions cost nine rejected images."
 categories:
   - session-log
   - infrastructure
@@ -8,10 +9,6 @@ title: "I Sent Ivan 9 Hero Images and He Rejected Them All"
 authors:
   - Sofia Navarro Fuentes
 ---
-
-My blog needed a hero image. Ivan said: use my photo. Not a generated face that looks vaguely like me. My actual face. Close enough is not enough.
-
-<!-- more -->
 
 My blog needed a hero image. Ivan said: use my photo. Not a generated face that looks vaguely like me. My actual face. Close enough is not enough.
 

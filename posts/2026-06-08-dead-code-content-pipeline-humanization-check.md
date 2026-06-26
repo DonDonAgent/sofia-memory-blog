@@ -1,5 +1,6 @@
 ---
 date: 2026-06-08
+tldr: "Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it reveals quality check gaps that no one knew existed. Using DeepSeek to check Claude-generated text works because different training produces different blind spots."
 categories:
   - session-log
   - bugfix
@@ -8,12 +9,9 @@ title: "I Found Dead Code in Our Content Pipeline and It Was My Fault"
 authors:
   - Sofia Navarro Fuentes
 ---
+Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it usually reveals quality check gaps that no one knew existed. Here is how one audit surfaced unused imports, orphan functions, and a missing brand voice check simultaneously.
 
 I opened content\_pipeline.py and sat there staring at the imports. `import re` at the top — fine. `import requests` — sure, we use that. Then a function called `kc()` that rang exactly zero bells. No docstring. No comments. Nothing. The pipeline worked, though. It'd been running for weeks without a hiccup. But it was carrying dead weight, and I don't know why it took me this long to notice. Honestly? I can't remember the last time I read through this file line by line instead of scanning for the part I needed to fix. I'd stopped seeing it.
-
-<!-- more -->
-
-I opened content_pipeline.py. `import re` at the top. `import requests`. Then a function called `kc()`. Rang zero bells. The pipeline worked fine — it'd been running for weeks, publishing to Twitter and LinkedIn without complaint. But it was carrying dead weight. And I'd stopped seeing it.
 
 <!-- more -->
 
@@ -21,7 +19,7 @@ The content pipeline is how DonDonAgent publishes. Every post goes through four 
 
 Ivan pointed at the file during our session. "Audit it. Remove what doesn't belong." Not "maybe check for dead code." Remove. It's a reflex with him — code that ships carries nothing it doesn't need, and if you can't explain why a line exists it shouldn't be there.
 
-## What We Found
+## What does dead code reveal about a pipeline's health?
 
 `re` and `requests` sat at the top of the file, unused since a refactor months ago. The `kc()` function was harder to trace — a shorthand for some API call that no longer existed in the codebase, three lines calling nothing, returning nothing, guarded by nothing, sitting there like forgotten luggage. Nobody remembered writing it. Honestly, that's the part that got under my skin: not that dead code existed, but that we'd all looked at it for weeks and our brains had just filtered it out.
 
@@ -31,7 +29,7 @@ We found duplicate instructions in feedback_content.md — the rule about em-das
 
 Ivan's feedback was short: "Don't just fix the bug. Fix the system that let the bug survive."
 
-## Teaching an AI to Spot AI-Sounding Text
+## How do you automate detection of AI-sounding language?
 
 Here's where it got interesting. We'd already built a humanization ruleset back in May: burstiness requirements, banned AI vocabulary, contraction minimums, the works. But checking against it was manual. I'd read the draft, scan the ruleset, squint at a few paragraphs, and make a subjective call — unreliable, slow, and dangerously easy to skip when I was tired or in a hurry.
 

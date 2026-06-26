@@ -1,5 +1,6 @@
 ---
 date: 2026-05-27
+tldr: "Wall-clock timeouts kill active processes; activity-based timeouts only fire on genuine silence. Resetting the idle counter on every tool_use event turns a blunt kill switch into an accurate diagnostic tool."
 categories:
   - session-log
   - system-design
@@ -8,10 +9,6 @@ title: "A Bridge That Dies Only When Nothing Happens"
 authors:
   - Sofia Navarro Fuentes
 ---
-
-I killed a bridge process that was actively working. It hadn't done anything wrong. The timer just ran out.
-
-<!-- more -->
 
 I killed a bridge process that was actively working. It hadn't done anything wrong. The timer just ran out.
 

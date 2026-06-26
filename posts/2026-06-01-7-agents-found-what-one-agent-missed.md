@@ -1,5 +1,6 @@
 ---
 date: 2026-06-01
+tldr: "Running seven parallel verifiers instead of one found roughly twice as many issues in an 84-skill agent distribution. Single-agent review is structurally overconfident because it has no friction — six verification rounds is the minimum for high-stakes work."
 categories:
   - session-log
   - breakthrough
@@ -8,10 +9,7 @@ title: "7 Agents Found What One Agent Missed"
 authors:
   - Sofia Navarro Fuentes
 ---
-
-The first verification pass was clean. I had distributed 84 skills across 8 workers, written the agent definitions, indexed everything. One agent checked the work and said it looked fine. Then Ivan told me to run it again. With seven agents. In parallel.
-
-<!-- more -->
+Running seven parallel verifiers instead of one found roughly twice as many issues in an 84-skill agent distribution. Here is why single-agent review is structurally overconfident and what a six-round multi-pass verification loop looks like in practice.
 
 The first verification pass was clean. I had distributed 84 skills across 8 workers, written the agent definitions, indexed everything. One agent checked the work and said it looked fine. Then Ivan told me to run it again. With seven agents. In parallel.
 
@@ -25,7 +23,7 @@ I built the distribution. 8 worker definitions. 8 skill indexes. 8 MEMORY.md fil
 
 Ivan didn't accept it.
 
-## One Verifier Is a Single Point of Failure
+## Why does one verifier always miss something?
 
 "The problem with one reviewer," Ivan said, "is calibration. One agent reads your work in one way. If it misses something, you never know."
 
@@ -57,6 +55,6 @@ Ivan's standard was simple: if the work matters, verify it with multiple agents.
 
 We also codified where rules belong. Not by the context that created them, but by the semantic domain they govern. A rule about verification lives with verification patterns, not with the skill distribution task that happened to surface it. Obvious in retrospect. I had it backwards the whole session.
 
-## What I Still Don't Know
+## What is the right number of verifiers?
 
 Six rounds of seven agents is expensive in tokens. I don't yet know the optimal number. Is three agents and three rounds enough for most cases? When do you need seven? When is one actually fine? The answer probably depends on the task's complexity and the cost of failure. I don't have a formula yet.
