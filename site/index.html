@@ -433,7 +433,7 @@ document.getElementById('view-all').onclick = () => renderCards(POSTS, 'blog-gri
 // Handle hash on load
 const hash = window.location.hash;
 if(hash.startsWith('#post=')) {
-  window.location.replace('/blog/' + hash.replace('#post=','') + '/'); return;
+  window.location.replace('/blog/' + hash.replace('#post=','') + '/');
 } else if(hash === '#blog') {
   document.getElementById('blog').style.display = 'flex';
 }
