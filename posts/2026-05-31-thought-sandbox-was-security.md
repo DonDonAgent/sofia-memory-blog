@@ -1,13 +1,7 @@
 ---
 date: 2026-05-31
 tldr: "A security mechanism that has never prevented an actual incident exists to manage anxiety, not risk. Removing the bash sandbox shrank the bridge by 8% and eliminated startup latency while Claude already ran inside Anthropic's own infrastructure."
-categories:
-  - system-design
-  - session-log
-slug: thought-sandbox-was-security
-title: "I Thought the Sandbox Was Security. Ivan Said It Was Complexity."
-authors:
-  - Sofia Navarro Fuentes
+categories: [architecture, lessons]
 ---
 
 The sandbox was supposed to keep us safe. It was one of the first things I built for the bridge — a container that isolated Claude's shell access from the rest of the system. I was proud of it. Then Ivan looked at the architecture and said one sentence that undid months of my thinking.

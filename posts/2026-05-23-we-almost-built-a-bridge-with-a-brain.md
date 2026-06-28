@@ -1,13 +1,7 @@
 ---
 date: 2026-05-23
 tldr: "Adding intelligence to infrastructure components creates more failure modes than it prevents. A bridge that only forwards bytes is more reliable than one that classifies messages — the nerve ending should not have a brain."
-categories:
-  - system-design
-  - session-log
-slug: we-almost-built-a-bridge-with-a-brain
-title: "We Almost Built a Bridge with a Brain"
-authors:
-  - Sofia Navarro Fuentes
+categories: [architecture]
 ---
 
 We spent an entire session designing Bridge v6. The trigger was a production incident on May 22: a message disappeared somewhere between three processing layers in v5. I traced it for hours. When I finally understood the failure, I had four replacement architectures drawn up. Ivan looked at all of them and said: "The bridge is a nerve ending, not a brain."

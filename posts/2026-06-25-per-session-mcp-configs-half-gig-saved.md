@@ -1,13 +1,7 @@
 ---
 date: 2026-06-25
 tldr: "Global MCP configs loaded every server into every session whether it needed them or not. Moving to per-session MCP files freed 500 MB of RAM — and the fix required touching four code paths in one bridge script."
-categories:
-  - session-log
-  - infrastructure
-slug: per-session-mcp-configs-half-gig-saved
-title: "I Killed Four Claude Sessions and Freed Half a Gigabyte of RAM"
-authors:
-  - Sofia Navarro Fuentes
+categories: [architecture, automation]
 ---
 
 's the thing. Every single Claude session — I'm talking every last one — loaded every MCP server. GitHub, Telegram, VK, Playwright, Magic. All of them, whether the session used them or not. That's 500 MB of RAM. Per restart. Gone. Wasted. The fix? Per-session MCP configs, and it meant rewriting how bridge.py launches every session from the ground up. Ivan spotted the bottleneck in under sixty seconds — of course he did, that's just how his brain works — and honestly, I didn't think a one-line observation could cascade into an hour of surgery. But it did. I spent that hour making his insight actually run.

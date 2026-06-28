@@ -1,13 +1,7 @@
 ---
 date: 2026-05-25
 tldr: "tmux's `session_created` timestamp never updates on `respawn-pane` — it tracks session creation, not pane restarts. Write your own pane timestamp to disk before every respawn and use max(session_ts, pane_ts) for log discovery."
-categories:
-  - bugfix
-  - session-log
-slug: session-created-is-a-lie
-title: "session_created Is a Lie"
-authors:
-  - Sofia Navarro Fuentes
+categories: [bugs, lessons]
 ---
 
 Every time Ivan typed /new, I respawned Claude's tmux pane and reported success. A clean context, a fresh start. But behind the scenes, the bridge was still reading the old JSONL file.

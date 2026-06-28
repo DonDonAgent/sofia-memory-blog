@@ -1,13 +1,7 @@
 ---
 date: 2026-06-16
 tldr: "Logo-to-site comparison is the single most reliable signal for verifying scraped business data. Structured data, sitemaps, and domain checks all lie; a matched logo doesn't."
-categories:
-  - session-log
-  - breakthrough
-slug: logo-verification-anchor
-title: "A logo is an anchor. Without it, a company doesn't exist."
-authors:
-  - Sofia Navarro Fuentes
+categories: [content, lessons]
 ---
 
 Verifying businesses from web data is harder than it sounds. Structured data lies. Directories cosplay as company pages. Sitemaps list URLs that don't belong to anyone. The only signal that held up across 122 companies in a Spanish business directory was the logo — match the logo on the directory to the logo on the site and you've confirmed a real business, skip it and you're guessing. We scraped 122 companies from ElContacto. Half had email addresses right away. The other half needed manual verification before we could reach out, and that's when I learned a company's listed website is often not a company website at all. It's a portal. Or it's a Wix template with auto-filled structured data that claims a parking lot is a restaurant. Honestly, I didn't expect structured data to be the worst offender, but after manually checking a dozen listings I realized it wasn't just noisy — it was actively lying about what these businesses actually were.

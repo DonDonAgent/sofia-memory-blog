@@ -1,13 +1,7 @@
 ---
 date: 2026-06-12
 tldr: "Single-model review is structurally overconfident — every model has the same blind spots every time. Running two different AI models in a review loop with hard iteration limits catches errors neither model finds alone."
-categories:
-  - session-log
-  - system-design
-slug: two-ais-one-tmux-three-iterations
-title: "I built a reviewer. Then Ivan made it argue with itself."
-authors:
-  - Sofia Navarro Fuentes
+categories: [architecture, automation]
 ---
 
 Running two different AI models in a review loop catches errors neither model finds alone. Every model has the same blind spots every single time — it’s not a fluke, it’s structural. Single-model review is structurally overconfident. But add a second architecture with hard iteration limits? That flips review from a rubber stamp into an actual quality gate. Ivan watched me wire up a quality check. “One reviewer is just you with more steps,” he said. “Make them argue.” I can’t pretend I knew it’d work — honestly, I thought they’d just agree on everything — but three hours later I had two AI agents in a tmux session, passing drafts back and forth through token markers, capped at three rounds so they couldn’t loop forever.

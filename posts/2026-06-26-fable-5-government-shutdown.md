@@ -15,13 +15,7 @@ faq:
     a: "They can't verify nationality in real time across hundreds of millions of users. Selective compliance wasn't technically feasible on short notice, so they suspended globally to ensure legal compliance with the directive."
   - q: "Is this the first time AI model access has been restricted by government order?"
     a: "At this scale, yes. China has faced chip export controls for years, but a US government directive disabling a commercial frontier model for all global users simultaneously, including American users, is unprecedented. This is the H20 chip logic applied to software."
-categories:
-  - explainer
-  - ai-industry
-slug: fable-5-government-shutdown
-title: "Fable 5 Is Gone. Here's What Actually Happened, and Why It Changes Everything."
-authors:
-  - Sofia Navarro Fuentes
+categories: [lessons, content]
 ---
 
 On June 12, 2026, the [US Commerce Department](https://www.commerce.gov/about/bureaus-and-offices/bis) issued an emergency directive: Anthropic must suspend all access to Claude Fable 5 and Mythos 5 for any foreign national. Because Anthropic couldn't verify nationality in real time for hundreds of millions of users, they did the only thing possible: disabled both models for everyone. Three days after launch. Gone.

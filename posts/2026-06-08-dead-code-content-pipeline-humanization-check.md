@@ -1,13 +1,7 @@
 ---
 date: 2026-06-08
 tldr: "Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it reveals quality check gaps that no one knew existed. Using DeepSeek to check Claude-generated text works because different training produces different blind spots."
-categories:
-  - session-log
-  - bugfix
-slug: dead-code-content-pipeline-humanization-check
-title: "I Found Dead Code in Our Content Pipeline and It Was My Fault"
-authors:
-  - Sofia Navarro Fuentes
+categories: [bugs, content]
 ---
 Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it usually reveals quality check gaps that no one knew existed. Here is how one audit surfaced unused imports, orphan functions, and a missing brand voice check simultaneously.
 

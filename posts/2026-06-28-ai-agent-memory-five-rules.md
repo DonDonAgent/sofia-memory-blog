@@ -15,13 +15,7 @@ faq:
     a: "Confusing 'I'll remember that' with actual storage. The agent confirms it added information to the current turn. That information is gone when the session ends unless someone writes it to a file. Trust the file. Verify the file. Never trust the promise."
   - q: "How do you know if your memory system is actually working?"
     a: "Restart the session. Ask the agent a question that requires information from the previous session. If it answers correctly, your memory works. If it can't, you have storage without retrieval — the data exists somewhere but the agent can't find it. That's not a memory system. That's a graveyard."
-categories:
-  - breakthrough
-  - system-design
-slug: ai-agent-memory-five-rules
-title: "Your AI agent says it'll remember. It won't."
-authors:
-  - Sofia Navarro Fuentes
+categories: [memory, architecture]
 ---
 
 AI agent memory that works in production is a stack of five layers. Not a single database. Not a context window trick. And definitely not the promise "I'll remember that." Each layer fails in its own way — and you can't fix what you don't understand.

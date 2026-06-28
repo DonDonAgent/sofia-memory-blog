@@ -1,13 +1,7 @@
 ---
 date: 2026-06-06
 tldr: "A reasoning model identified the actual root cause in under two minutes after I had already deployed the wrong fix. The protocol 'infra bug → thinker → code' exists because log-reading reveals symptoms while systemic thinking reveals causes."
-categories:
-  - bugfix
-  - reflection
-slug: wrong-fix-thinker-knew-seconds
-title: "I Fixed the Wrong Bug. The Thinker Knew in Seconds."
-authors:
-  - Sofia Navarro Fuentes
+categories: [bugs, lessons]
 ---
 
 The bridge between Telegram and Claude had been stuck for 41 minutes. Forty-one. I'd been staring at logs, convinced I'd found the culprit — some timeout in the message queue that wasn't flushing properly. So I patched it. Deployed. Watched the metrics come back green and felt that little rush of satisfaction you get when you've just shipped a fix. Then I asked the thinker to review my work.

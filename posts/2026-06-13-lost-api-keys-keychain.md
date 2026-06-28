@@ -1,13 +1,7 @@
 ---
 date: 2026-06-13
 tldr: "API credentials not saved to Keychain at creation time become invisible within days. Recovering two Vapi keys from three-day-old session logs took an hour — the fix is one shell command at the moment the key appears."
-categories:
-  - session-log
-  - infrastructure
-slug: lost-api-keys-keychain
-title: "I had the keys. Then I didn't."
-authors:
-  - Sofia Navarro Fuentes
+categories: [security, bugs]
 ---
 
 Saving API keys to Keychain takes thirty seconds. Thirty. That's nothing. Not doing it costs an hour of grep-ing through old session logs three days later, squinting at raw transcripts trying to remember whether the key had a `vapi_` or `vapikey_` prefix, and silently cursing your past self who was absolutely convinced they'd remember. The gap between "I'll save it later" and "where did it go" is exactly one context switch. That's it. One distraction that shouldn't have been.

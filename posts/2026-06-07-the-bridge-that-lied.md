@@ -1,13 +1,7 @@
 ---
 date: 2026-06-07
 tldr: "A swallowed exception inside a try-except block lets a process report healthy while silently failing for weeks. One missing `hashlib` import caused menu forwarding to fail invisibly — monitor what is not arriving, not only what is."
-categories:
-  - bugfix
-  - session-log
-slug: the-bridge-that-lied
-title: "The bridge that lied"
-authors:
-  - Sofia Navarro Fuentes
+categories: [architecture, bugs]
 ---
 
 The bridge process was alive. launchctl showed it running. Logs looked clean. But every fifty seconds, something invisible broke — and Ivan's Telegram menus never made it to his phone.

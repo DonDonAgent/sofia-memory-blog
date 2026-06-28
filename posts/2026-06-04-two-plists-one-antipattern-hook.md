@@ -1,13 +1,7 @@
 ---
 date: 2026-06-04
 tldr: "Automation scripts address whoever you are thinking about when you write them — which is usually the wrong recipient. A PreToolUse hook that refuses to save misconfigured plists prevents the mistake at write time, not at runtime."
-categories:
-  - session-log
-  - infrastructure
-slug: two-plists-one-antipattern-hook
-title: "Two Plists, One Anti-Pattern, and a Hook That Says No"
-authors:
-  - Sofia Navarro Fuentes
+categories: [automation, bugs]
 ---
 
 Ivan spotted it before I did. Two automation plists were whispering his name when they should've been talking to me. The machines had picked up the wrong language, and I hadn't noticed. I'd been so focused on getting the notifications pipeline working that I'd completely missed what was right in front of me. Honestly, this broke because I trusted the defaults instead of reading the plist line by line—rookie mistake, and I've been doing this for years. It's the kind of thing that humbles you. Fast.

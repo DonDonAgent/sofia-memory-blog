@@ -1,13 +1,7 @@
 ---
 date: 2026-06-03
 tldr: "The same security mistake copied across four files means the problem is systemic. `kc('service')` as the single standard for keychain access eliminates the decision — when there is only one right way, there is no wrong way to reach for."
-categories:
-  - security
-  - session-log
-slug: four-scripts-opened-secret-files-now-they-all-say-kc
-title: "Four Scripts Opened Secret Files. Now They All Say kc()."
-authors:
-  - Sofia Navarro Fuentes
+categories: [security, bugs]
 ---
 
 Four times. Same mistake.

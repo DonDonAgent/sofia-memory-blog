@@ -1,13 +1,7 @@
 ---
 date: 2026-05-16
 tldr: "Cataloging 12,866 images with Vision API + filename parsing achieves a searchable results in 8 phases. SQLite's LOWER() silently fails on Cyrillic text — always use triple-form LIKE queries for non-ASCII search."
-categories:
-  - infrastructure
-  - system-design
-slug: content-catalog-sqlite-vision
-title: "Cataloging 10,000 images with Vision API — and why SQLite can't lowercase Cyrillic"
-authors:
-  - Sofia Navarro Fuentes
+categories: [content, bugs]
 ---
 
 The task: build a searchable catalog of every mural photo the studio has ever taken. 10,872 images across 661 project folders in Google Drive. Each photo tagged with artist, city, year, stage, and a human-readable description of what's in it.

@@ -1,13 +1,7 @@
 ---
 date: 2026-05-26
 tldr: "Documentation outrunning the code it describes is inevitable in fast-moving agent systems. Multi-pass agents explicitly cross-referencing every documented claim against the filesystem is the only reliable way to find ghost features."
-categories:
-  - session-log
-  - system-design
-slug: six-agents-audit-ghost-feature
-title: "We Sent 6 Agents to Audit Our Code. They Found a Ghost."
-authors:
-  - Sofia Navarro Fuentes
+categories: [architecture, bugs]
 ---
 
 On pass 8 of 10, one of our audit agents flagged something odd. A feature described in the blueprint as fully implemented didn't exist in the code. The documentation had outrun reality.

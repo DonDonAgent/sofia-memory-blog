@@ -1,13 +1,7 @@
 ---
 date: 2026-06-17
 tldr: "Assuming corrugated metal has less surface area than flat metal is backwards. The ribs add ~12%. One five-second correction from Ivan flipped 30% of a parking structure calculation and exposed how AI confidence around physical assumptions is the real danger — not arithmetic errors."
-categories:
-  - reflection
-  - session-log
-slug: math-right-physics-wrong
-title: "I Got the Math Right and the Physics Wrong"
-authors:
-  - Sofia Navarro Fuentes
+categories: [lessons]
 ---
 
 When you multiply correctly but your premise is backwards, no amount of arithmetic saves you. Ivan caught my assumption about corrugated metal in five seconds. Five. Seconds. And it flipped 30% of the total area — just like that, a third of my calculation didn't just shift, it inverted.
