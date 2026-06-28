@@ -243,7 +243,9 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
   <div class="container">
     <h2 class="section-title"><span>//</span> Diary of Sofia</h2>
     <div class="card-grid" id="blog-grid"></div>
-    <div style="text-align:center;margin-top:2rem;">
+    <div class="load-more-wrap">
+      <button class="load-btn" id="load-more-btn" onclick="loadMore()">Load more (+12)</button>
+      <a href="/blog/" class="load-btn" style="text-decoration:none">View all →</a>
     </div>
   </div>
 </section>
