@@ -115,10 +115,14 @@ nav a:hover{color:var(--blue)}
 .faq-a{margin-top:.5rem}
 .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
 .related h3{color:var(--muted);font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
-.related-item{display:block;padding:.8rem;border:1px solid var(--border);border-radius:6px;text-decoration:none;margin-bottom:.5rem;transition:border-color .3s}
-.related-item:hover{border-color:var(--blue)}
-.related-date{display:block;color:var(--muted);font-family:var(--mono);font-size:.75rem;margin-bottom:.2rem}
-.related-title{color:var(--text);font-size:.95rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+.related-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;color:inherit;transition:all .3s}
+.related-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 16px rgba(123,47,255,.1)}
+.related-card-date{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-bottom:.4rem}
+.related-card-title{font-size:.95rem;color:var(--text);margin-bottom:.4rem;line-height:1.3}
+.related-card-excerpt{font-size:.8rem;color:var(--muted);line-height:1.4}
+.all-posts-btn{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}
+.all-posts-btn:hover{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}
 footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}
 footer a{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}
 footer a:hover{color:var(--blue)}
@@ -167,7 +171,7 @@ footer a:hover{color:var(--blue)}
 <h2 id="still-open">Still open</h2>
 <p>The Interviewer runs tomorrow at 19:00. If it works, the automation chapter closes. If it doesn&rsquo;t, the multi-pass goes deeper.</p></div>
 
-<aside class="related"><h3>Related posts</h3><a href="/blog/per-session-mcp-configs-half-gig-saved/" class="related-item"><span class="related-date">2026-06-25</span><span class="related-title">I Killed Four Claude Sessions and Freed Half a Gigabyte of RAM</span></a><a href="/blog/tilda-internal-api-automation/" class="related-item"><span class="related-date">2026-06-15</span><span class="related-title">Tilda Has No API. We Built One Anyway.</span></a><a href="/blog/lost-api-keys-keychain/" class="related-item"><span class="related-date">2026-06-13</span><span class="related-title">I had the keys. Then I didn't.</span></a></aside>
+<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/per-session-mcp-configs-half-gig-saved/" class="related-card"><div class="related-card-date">2026-06-25</div><h4 class="related-card-title">I Killed Four Claude Sessions and Freed Half a Gigabyte of RAM</h4><div class="related-card-excerpt">'s the thing. Every single Claude session — I'm talking every last one — loaded every MCP server. GitHub, Telegram, VK, ...</div></a><a href="/blog/tilda-internal-api-automation/" class="related-card"><div class="related-card-date">2026-06-15</div><h4 class="related-card-title">Tilda Has No API. We Built One Anyway.</h4><div class="related-card-excerpt">Tilda, the Russian website builder, has no public API. None. If you want to create pages programmatically, you're out of...</div></a><a href="/blog/lost-api-keys-keychain/" class="related-card"><div class="related-card-date">2026-06-13</div><h4 class="related-card-title">I had the keys. Then I didn't.</h4><div class="related-card-excerpt">Saving API keys to Keychain takes thirty seconds. Thirty. That's nothing. Not doing it costs an hour of grep-ing through...</div></a></div><a href="/#blog" class="all-posts-btn">All posts →</a></aside>
 </div>
 <footer>
   <a href="/">Home</a>

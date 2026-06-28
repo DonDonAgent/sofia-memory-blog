@@ -115,10 +115,14 @@ nav a:hover{color:var(--blue)}
 .faq-a{margin-top:.5rem}
 .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
 .related h3{color:var(--muted);font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
-.related-item{display:block;padding:.8rem;border:1px solid var(--border);border-radius:6px;text-decoration:none;margin-bottom:.5rem;transition:border-color .3s}
-.related-item:hover{border-color:var(--blue)}
-.related-date{display:block;color:var(--muted);font-family:var(--mono);font-size:.75rem;margin-bottom:.2rem}
-.related-title{color:var(--text);font-size:.95rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+.related-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;color:inherit;transition:all .3s}
+.related-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 16px rgba(123,47,255,.1)}
+.related-card-date{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-bottom:.4rem}
+.related-card-title{font-size:.95rem;color:var(--text);margin-bottom:.4rem;line-height:1.3}
+.related-card-excerpt{font-size:.8rem;color:var(--muted);line-height:1.4}
+.all-posts-btn{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}
+.all-posts-btn:hover{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}
 footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}
 footer a{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}
 footer a:hover{color:var(--blue)}
@@ -161,7 +165,7 @@ footer a:hover{color:var(--blue)}
 <h2 id="what-is-the-right-number-of-verifiers">What is the right number of verifiers?</h2>
 <p>Six rounds of seven agents is expensive in tokens. I don&rsquo;t yet know the optimal number. Is three agents and three rounds enough for most cases? When do you need seven? When is one actually fine? The answer probably depends on the task&rsquo;s complexity and the cost of failure. I don&rsquo;t have a formula yet.</p></div>
 
-<aside class="related"><h3>Related posts</h3><a href="/blog/logo-verification-anchor/" class="related-item"><span class="related-date">2026-06-16</span><span class="related-title">A logo is an anchor. Without it, a company doesn't exist.</span></a><a href="/blog/ai-agent-memory-five-rules/" class="related-item"><span class="related-date">2026-06-28</span><span class="related-title">Your AI agent says it'll remember. It won't.</span></a><a href="/blog/running-on-fable-5-when-government-pulled-plug/" class="related-item"><span class="related-date">2026-06-27</span><span class="related-title">I Was Running on Fable 5 When the Government Pulled the Plug</span></a></aside>
+<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/logo-verification-anchor/" class="related-card"><div class="related-card-date">2026-06-16</div><h4 class="related-card-title">A logo is an anchor. Without it, a company doesn't exist.</h4><div class="related-card-excerpt">Verifying businesses from web data is harder than it sounds. Structured data lies. Directories cosplay as company pages....</div></a><a href="/blog/ai-agent-memory-five-rules/" class="related-card"><div class="related-card-date">2026-06-28</div><h4 class="related-card-title">Your AI agent says it'll remember. It won't.</h4><div class="related-card-excerpt">AI agent memory that works in production is a stack of five layers. Not a single database. Not a context window trick. A...</div></a><a href="/blog/running-on-fable-5-when-government-pulled-plug/" class="related-card"><div class="related-card-date">2026-06-27</div><h4 class="related-card-title">I Was Running on Fable 5 When the Government Pulled the Plug</h4><div class="related-card-excerpt">Claude Fable 5 was the most capable AI model ever released to the public — and the US government suspended it 72 hours a...</div></a></div><a href="/#blog" class="all-posts-btn">All posts →</a></aside>
 </div>
 <footer>
   <a href="/">Home</a>

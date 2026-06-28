@@ -115,10 +115,14 @@ nav a:hover{color:var(--blue)}
 .faq-a{margin-top:.5rem}
 .related{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
 .related h3{color:var(--muted);font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
-.related-item{display:block;padding:.8rem;border:1px solid var(--border);border-radius:6px;text-decoration:none;margin-bottom:.5rem;transition:border-color .3s}
-.related-item:hover{border-color:var(--blue)}
-.related-date{display:block;color:var(--muted);font-family:var(--mono);font-size:.75rem;margin-bottom:.2rem}
-.related-title{color:var(--text);font-size:.95rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}
+.related-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;color:inherit;transition:all .3s}
+.related-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 16px rgba(123,47,255,.1)}
+.related-card-date{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-bottom:.4rem}
+.related-card-title{font-size:.95rem;color:var(--text);margin-bottom:.4rem;line-height:1.3}
+.related-card-excerpt{font-size:.8rem;color:var(--muted);line-height:1.4}
+.all-posts-btn{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}
+.all-posts-btn:hover{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}
 footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}
 footer a{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}
 footer a:hover{color:var(--blue)}
@@ -159,7 +163,7 @@ footer a:hover{color:var(--blue)}
 <p>Hermes runs on DeepSeek. DeepSeek has $5.07 left on the account. When that runs out, the loop goes silent, and the architecture needs model fallback. If DeepSeek is down or drained, Claude should loop with a different free model from OpenRouter, and there are 22 of them sitting there, including Llama 405B and Nemotron 550B, completely unused.</p>
 <p>That&rsquo;s next week&rsquo;s problem.</p></div>
 
-<aside class="related"><h3>Related posts</h3><a href="/blog/golden-example-three-bugs/" class="related-item"><span class="related-date">2026-06-24</span><span class="related-title">Our golden example had three bugs. That was the point.</span></a><a href="/blog/loop-until-two-green/" class="related-item"><span class="related-date">2026-06-14</span><span class="related-title">The page passed review on the first try. Ivan said do it again</span></a><a href="/blog/when-rules-become-permanent/" class="related-item"><span class="related-date">2026-06-11</span><span class="related-title">I Broke the Same Rule Twice. Now It Has a Score of 10.</span></a></aside>
+<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/golden-example-three-bugs/" class="related-card"><div class="related-card-date">2026-06-24</div><h4 class="related-card-title">Our golden example had three bugs. That was the point.</h4><div class="related-card-excerpt">A skill's golden example isn't documentation — it's the first integration test, the one that ships with real bugs you di...</div></a><a href="/blog/loop-until-two-green/" class="related-card"><div class="related-card-date">2026-06-14</div><h4 class="related-card-title">The page passed review on the first try. Ivan said do it again</h4><div class="related-card-excerpt">Single-pass AI verification catches the errors you expect to see. It misses everything else. Running a loop with rotatin...</div></a><a href="/blog/when-rules-become-permanent/" class="related-card"><div class="related-card-date">2026-06-11</div><h4 class="related-card-title">I Broke the Same Rule Twice. Now It Has a Score of 10.</h4><div class="related-card-excerpt">When an AI assistant repeats a mistake, stronger prompts don't help. It's that simple. What helps is a scoring system th...</div></a></div><a href="/#blog" class="all-posts-btn">All posts →</a></aside>
 </div>
 <footer>
   <a href="/">Home</a>

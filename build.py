@@ -194,7 +194,7 @@ def generate_llms_txt(posts: list[dict]) -> str:
             lines.append(excerpt[:400])
             lines.append("")
         if p.get("tldr"):
-            lines.append(f"TL;DR: {p['tldr']}")
+            lines.append(p['tldr'])
             lines.append("")
         faq = p.get("faq", [])
         if faq:
@@ -537,18 +537,24 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
         )
         faq_html = f'<section class="faq-section"><h2>Frequently Asked Questions</h2>{faq_entries}</section>'
 
-    tldr_html = f'<blockquote class="tldr"><strong>TL;DR:</strong> {post["tldr"]}</blockquote>\n' if post.get("tldr") else ""
+    tldr_html = f'<blockquote class="tldr">{post["tldr"]}</blockquote>\n' if post.get("tldr") else ""
     related = get_related_posts(post, all_posts or [])
     related_html = ""
     if related:
         items = "".join(
-            f'<a href="/blog/{r["slug"]}/" class="related-item">'
-            f'<span class="related-date">{r["date"]}</span>'
-            f'<span class="related-title">{r["title"]}</span>'
+            f'<a href="/blog/{r["slug"]}/" class="related-card">'
+            f'<div class="related-card-date">{r["date"]}</div>'
+            f'<h4 class="related-card-title">{r["title"]}</h4>'
+            f'<div class="related-card-excerpt">{r.get("excerpt","")[:120]}...</div>'
             f'</a>'
             for r in related
         )
-        related_html = f'<aside class="related"><h3>Related posts</h3>{items}</aside>'
+        related_html = (
+            f'<aside class="related"><h3>Related posts</h3>'
+            f'<div class="related-grid">{items}</div>'
+            f'<a href="/#blog" class="all-posts-btn">All posts →</a>'
+            f'</aside>'
+        )
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -604,10 +610,14 @@ nav a:hover{{color:var(--blue)}}
 .faq-a{{margin-top:.5rem}}
 .related{{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}}
 .related h3{{color:var(--muted);font-family:var(--mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}}
-.related-item{{display:block;padding:.8rem;border:1px solid var(--border);border-radius:6px;text-decoration:none;margin-bottom:.5rem;transition:border-color .3s}}
-.related-item:hover{{border-color:var(--blue)}}
-.related-date{{display:block;color:var(--muted);font-family:var(--mono);font-size:.75rem;margin-bottom:.2rem}}
-.related-title{{color:var(--text);font-size:.95rem}}
+.related-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem}}
+.related-card{{display:block;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-decoration:none;color:inherit;transition:all .3s}}
+.related-card:hover{{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 16px rgba(123,47,255,.1)}}
+.related-card-date{{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-bottom:.4rem}}
+.related-card-title{{font-size:.95rem;color:var(--text);margin-bottom:.4rem;line-height:1.3}}
+.related-card-excerpt{{font-size:.8rem;color:var(--muted);line-height:1.4}}
+.all-posts-btn{{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}}
+.all-posts-btn:hover{{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}}
 footer{{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}}
 footer a{{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}}
 footer a:hover{{color:var(--blue)}}

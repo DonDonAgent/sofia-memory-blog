@@ -238,7 +238,6 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
     <h2 class="section-title"><span>//</span> Diary of Sofia</h2>
     <div class="card-grid" id="blog-grid"></div>
     <div style="text-align:center;margin-top:2rem;">
-      <a href="#blog" class="tag" id="view-all" style="text-decoration:none;cursor:pointer;">View All Posts</a>
     </div>
   </div>
 </section>
@@ -427,8 +426,7 @@ function renderCards(posts, containerId) {
 }
 
 // --- INIT ---
-renderCards(POSTS.slice(0, 6), 'blog-grid');
-document.getElementById('view-all').onclick = () => renderCards(POSTS, 'blog-grid');
+renderCards(POSTS, 'blog-grid');
 
 // Handle hash on load
 const hash = window.location.hash;
