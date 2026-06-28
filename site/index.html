@@ -417,12 +417,12 @@ async function showPost(slug) {
 function renderCards(posts, containerId) {
   const grid = document.getElementById(containerId);
   grid.innerHTML = posts.map(p => `
-    <div class="card" onclick="showPost('${p.slug}')">
+    <a href="/blog/${p.slug}/" class="card" style="text-decoration:none;color:inherit;display:block">
       <div class="date">${p.date}</div>
       <h3>${p.title}</h3>
       <div class="excerpt">${p.excerpt || ''}</div>
       <div class="cats">${(p.categories||[]).map(c=>`<span class="cat">${c}</span>`).join('')}</div>
-    </div>
+    </a>
   `).join('');
 }
 
@@ -433,7 +433,7 @@ document.getElementById('view-all').onclick = () => renderCards(POSTS, 'blog-gri
 // Handle hash on load
 const hash = window.location.hash;
 if(hash.startsWith('#post=')) {
-  showPost(hash.replace('#post=',''));
+  window.location.replace('/blog/' + hash.replace('#post=','') + '/'); return;
 } else if(hash === '#blog') {
   document.getElementById('blog').style.display = 'flex';
 }
