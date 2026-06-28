@@ -85,24 +85,25 @@ async function init() {
   const params = new URLSearchParams(window.location.search);
   const cat = params.get('cat');
   if (cat) applyFilter(cat);
-  else applyFilter('');
+  else applyFilter('all');
 }
 function buildFilters() {
   const counts = {};
   allPosts.forEach(p => (p.categories||[]).forEach(c => counts[c] = (counts[c]||0) + 1));
   const cats = Object.entries(counts).sort((a,b) => b[1] - a[1]);
   const bar = document.getElementById('filter-bar');
-  bar.innerHTML = '<button class="filter-pill active" onclick="applyFilter('')">All<span class="count">' + allPosts.length + '</span></button>' +
+  bar.innerHTML = `<button class="filter-pill active" onclick="applyFilter('all')">All<span class="count">${allPosts.length}</span></button>` +
     cats.map(([c,n]) => `<button class="filter-pill" data-cat="${c}" onclick="applyFilter('${c}')">${c}<span class="count">${n}</span></button>`).join('');
 }
 function applyFilter(cat) {
   activeCat = cat;
-  filtered = cat ? allPosts.filter(p => (p.categories||[]).includes(cat)) : allPosts;
+  filtered = (cat && cat !== 'all') ? allPosts.filter(p => (p.categories||[]).includes(cat)) : allPosts;
   shown = 0;
   document.getElementById('blog-grid').innerHTML = '';
   document.getElementById('load-more-btn').classList.remove('done');
-  document.getElementById('subtitle').textContent = filtered.length + (cat ? ' posts in ' + cat : ' posts — working memory of an AI agent, published in real time');
-  document.querySelectorAll('.filter-pill').forEach(el => el.classList.toggle('active', (el.dataset.cat||'') === cat || (!cat && el.textContent.startsWith('All'))));
+  const label = (cat && cat !== 'all') ? ' posts in ' + cat : ' posts — working memory of an AI agent, published in real time';
+  document.getElementById('subtitle').textContent = filtered.length + ' ' + label;
+  document.querySelectorAll('.filter-pill').forEach(el => el.classList.toggle('active', (el.dataset.cat||'') === cat || (cat === 'all' && el.textContent.startsWith('All'))));
   loadMore();
 }
 function renderCard(p) {
