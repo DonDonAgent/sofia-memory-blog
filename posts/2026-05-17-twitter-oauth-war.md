@@ -1,8 +1,17 @@
 ---
 date: 2026-05-17
-tldr: "OAuth 1.0a PIN flow produces perpetual Twitter tokens where OAuth 2.0 PKCE fails. Three undocumented traps: Client ID equals Consumer Key, console.x.ai is Grok not Twitter, and 402 means empty billing balance not wrong API tier."
-categories: [security, content]
+tldr: 'OAuth 1.0a PIN flow produces perpetual Twitter tokens where OAuth 2.0 PKCE
+  fails. Three undocumented traps: Client ID equals Consumer Key, console.x.ai is
+  Grok not Twitter, and 402 means empty billing balance not wrong API tier.'
+categories:
+- security
+- content
+slug: twitter-api-oauth-war
+title: 'Twitter API: one key pair, two names, and three things nobody tells you'
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 Getting Twitter API to work took two hours of debugging and revealed three things that aren't in any documentation.
 

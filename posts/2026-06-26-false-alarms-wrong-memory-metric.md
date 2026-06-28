@@ -1,8 +1,17 @@
 ---
 date: 2026-06-26
-tldr: "On macOS, `free` memory is not the real number — `free + inactive` is. Measuring the wrong metric triggered three weeks of false CRITICAL alerts. Always ask what your metric actually means before wiring it to an alarm."
-categories: [bugs, lessons]
+tldr: On macOS, `free` memory is not the real number — `free + inactive` is. Measuring
+  the wrong metric triggered three weeks of false CRITICAL alerts. Always ask what
+  your metric actually means before wiring it to an alarm.
+categories:
+- bugs
+- lessons
+slug: false-alarms-wrong-memory-metric
+title: Three weeks of false alarms because I measured the wrong thing
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 The health daemon was watching `free` memory and flagging CRITICAL every time it dipped below 1 GB. On macOS, `inactive` pages are reclaimable — they look used but the kernel hands them over on demand, and it's been this way for years. Free + inactive was the real number, and that gap was what kept tripping the alarm.
 

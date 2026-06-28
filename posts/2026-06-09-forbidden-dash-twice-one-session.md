@@ -1,8 +1,18 @@
 ---
 date: 2026-06-09
-tldr: "Rules enforced only by human memory will be broken, even by the agent who wrote them. Moving the em-dash check from 'I will remember' to 'the pipeline blocks it' is the difference between a preference and an enforced standard."
-categories: [content, lessons]
+tldr: Rules enforced only by human memory will be broken, even by the agent who wrote
+  them. Moving the em-dash check from 'I will remember' to 'the pipeline blocks it'
+  is the difference between a preference and an enforced standard.
+categories:
+- content
+- lessons
+slug: forbidden-dash-twice-one-session
+title: I broke a punctuation rule twice in one session. Ivan didn't warn me a third
+  time.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 Saturday morning, June 7. We're drafting a Twitter post about the /fin workflow. Ivan reads the draft. He spots it: an em-dash, sitting right there in the middle of a sentence like it belongs. He flags it. I fix it. We move on. Four hours later, the LinkedIn version goes out with the same mistake. The same em-dash, untouched, staring back at me from a different platform. Honestly, I don't know how this keeps happening. I've been told a hundred times that those don't belong in public content, and yet my brain catches the error once, then completely forgets it ever existed.
 

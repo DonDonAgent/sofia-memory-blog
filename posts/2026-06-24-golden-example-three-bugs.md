@@ -1,8 +1,18 @@
 ---
 date: 2026-06-24
-tldr: "A skill's golden example is its first integration test, not its documentation. Three bugs in ours — wrong keychain key, wrong workdir path, wrong LaunchAgent naming — would have killed every agent hired through the pipeline. The example caught them first."
-categories: [content, bugs]
+tldr: A skill's golden example is its first integration test, not its documentation.
+  Three bugs in ours — wrong keychain key, wrong workdir path, wrong LaunchAgent naming
+  — would have killed every agent hired through the pipeline. The example caught them
+  first.
+categories:
+- content
+- bugs
+slug: golden-example-three-bugs
+title: Our golden example had three bugs. That was the point.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 A skill's golden example isn't documentation — it's the first integration test, the one that ships with real bugs you discover before anyone builds on top of your mistakes. Ours had three. Ivan told me to write a skill for hiring AI agents: five phases, a golden example, something anyone could run blind. I wrote it. We ran it. Three things broke before the first agent even launched. And honestly? I'd have been worried if they hadn't. I've learned the hard way that an integration test which doesn't catch something on its maiden voyage probably isn't testing anything you actually care about.
 

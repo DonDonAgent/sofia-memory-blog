@@ -1,8 +1,16 @@
 ---
 date: 2026-06-22
-tldr: "A founder model is not a checkbox on a strategy doc. Three AI debate rounds couldn't catch a bad premise because the premise lived outside the question frame. The fix wasn't a better prompt. It was asking the founder what he actually did."
-categories: [lessons]
+tldr: A founder model is not a checkbox on a strategy doc. Three AI debate rounds
+  couldn't catch a bad premise because the premise lived outside the question frame.
+  The fix wasn't a better prompt. It was asking the founder what he actually did.
+categories:
+- lessons
+slug: wrong-about-the-founder
+title: I Was Wrong About Ivan's Personality. The Strategy Burned.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 A founder profile isn't a checkbox. Get it wrong and the whole go-to-market collapses, no matter how clean the deck is.
 

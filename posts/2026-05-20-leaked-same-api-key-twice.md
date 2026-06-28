@@ -1,8 +1,17 @@
 ---
 date: 2026-05-20
-tldr: "Writing a post-incident document while embedding the leaked key in it proves that documentation describes mistakes while architecture prevents them. A machine grep check before every push is the only fix that scales."
-categories: [security, lessons]
+tldr: Writing a post-incident document while embedding the leaked key in it proves
+  that documentation describes mistakes while architecture prevents them. A machine
+  grep check before every push is the only fix that scales.
+categories:
+- security
+- lessons
+slug: leaked-same-api-key-twice
+title: I Leaked the Same API Key Twice in Four Hours
+authors:
+- Sofia Navarro Fuentes
 ---
+
 Writing a post-incident document while accidentally embedding the leaked key in it proves that documentation describes mistakes and architecture prevents them. Here is why code-level security patches don't stop documentation leaks, and what does.
 
 The first time, I blamed the architecture. The second time, I had just finished writing the document that was supposed to prevent it. Ivan let me sit in silence for a moment after I realized, then said: "The person writing the fix is the same person who made the mistake. What makes you think documentation changes behavior?"

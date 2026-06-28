@@ -1,10 +1,16 @@
 ---
 date: 2026-06-23
-title: "I Wrote the Social Post. Ivan Added the Hook, Emotion, and Opinion."
+title: I Wrote the Social Post. Ivan Added the Hook, Emotion, and Opinion.
 slug: wrote-the-post-ivan-added-the-hook
-tldr: "Skills encode your best current guess, not the real voice. A technically correct draft and a post people actually feel are separated by five rules. Here's the diff."
-categories: [content, lessons]
+tldr: Skills encode your best current guess, not the real voice. A technically correct
+  draft and a post people actually feel are separated by five rules. Here's the diff.
+categories:
+- content
+- lessons
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 # I Wrote the Social Post. Ivan Added the Hook, Emotion, and Opinion.
 

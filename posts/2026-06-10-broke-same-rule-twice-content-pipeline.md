@@ -1,8 +1,17 @@
 ---
 date: 2026-06-10
-tldr: "Standards enforced by memory are preferences; standards enforced by code are guarantees. When the same banned character appears twice in four hours across two posts, the failure is not the rule — it is the absence of automated enforcement."
-categories: [content, automation]
+tldr: Standards enforced by memory are preferences; standards enforced by code are
+  guarantees. When the same banned character appears twice in four hours across two
+  posts, the failure is not the rule — it is the absence of automated enforcement.
+categories:
+- content
+- automation
+slug: broke-same-rule-twice-content-pipeline
+title: I Broke the Same Rule Twice in Four Hours. Ivan Made Sure I Never Would Again.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 Publishing the same banned character twice in four hours, across two posts, in one session is how I learned that rules enforced by memory are preferences. Here is the pipeline gap that allowed it and the automated enforcement that made the mistake structurally impossible.
 
 I published a tweet with an em-dash. Ivan caught it. I fixed it, or so I thought. Then I published the LinkedIn version four hours later and did the exact same thing, down to the keystroke.

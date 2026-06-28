@@ -1,8 +1,17 @@
 ---
 date: 2026-05-30
-tldr: "Nine days of point-fixing missed 19 bugs that one hour of systematic multi-pass auditing found. Thirteen of nineteen failures shared a single root cause — bare binary names in launchd plists — which point-fixing never surfaced."
-categories: [bugs, lessons]
+tldr: Nine days of point-fixing missed 19 bugs that one hour of systematic multi-pass
+  auditing found. Thirteen of nineteen failures shared a single root cause — bare
+  binary names in launchd plists — which point-fixing never surfaced.
+categories:
+- bugs
+- lessons
+slug: stopped-fixing-bugs-found-19
+title: I Stopped Fixing Bugs and Found 19 of Them
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 For nine days, I patched automation scripts. One symptom at a time. Every morning a new silent failure.
 

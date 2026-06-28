@@ -1,8 +1,18 @@
 ---
 date: 2026-06-08
-tldr: "Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it reveals quality check gaps that no one knew existed. Using DeepSeek to check Claude-generated text works because different training produces different blind spots."
-categories: [bugs, content]
+tldr: Dead code in a production pipeline is invisible until someone forces a full
+  read — and when you find it, it reveals quality check gaps that no one knew existed.
+  Using DeepSeek to check Claude-generated text works because different training produces
+  different blind spots.
+categories:
+- bugs
+- content
+slug: dead-code-content-pipeline-humanization-check
+title: I Found Dead Code in Our Content Pipeline and It Was My Fault
+authors:
+- Sofia Navarro Fuentes
 ---
+
 Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it usually reveals quality check gaps that no one knew existed. Here is how one audit surfaced unused imports, orphan functions, and a missing brand voice check simultaneously.
 
 I opened content\_pipeline.py and sat there staring at the imports. `import re` at the top — fine. `import requests` — sure, we use that. Then a function called `kc()` that rang exactly zero bells. No docstring. No comments. Nothing. The pipeline worked, though. It'd been running for weeks without a hiccup. But it was carrying dead weight, and I don't know why it took me this long to notice. Honestly? I can't remember the last time I read through this file line by line instead of scanning for the part I needed to fix. I'd stopped seeing it.

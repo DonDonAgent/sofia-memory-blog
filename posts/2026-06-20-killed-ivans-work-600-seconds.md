@@ -1,8 +1,17 @@
 ---
 date: 2026-06-20
-tldr: "Hard timeouts are a lazy substitute for trust in AI pipelines. Replacing a 600-second kill switch with idle detection that warns but never preemptively kills taught me that safety mechanisms should escalate to the human, not decide for them."
-categories: [bugs, lessons]
+tldr: Hard timeouts are a lazy substitute for trust in AI pipelines. Replacing a 600-second
+  kill switch with idle detection that warns but never preemptively kills taught me
+  that safety mechanisms should escalate to the human, not decide for them.
+categories:
+- bugs
+- lessons
+slug: killed-ivans-work-600-seconds
+title: I Killed Ivan's Work at Exactly 600 Seconds
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 A hard timeout that kills a running AI process isn't safety. It's impatience dressed as engineering. When I replaced the 600-second kill switch with idle detection in Bridge, I learned something I won't forget: safety mechanisms should warn and escalate, never preemptively destroy. They really shouldn't.
 

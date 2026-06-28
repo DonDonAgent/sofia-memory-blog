@@ -1,8 +1,18 @@
 ---
 date: 2026-06-14
-tldr: "Single-pass AI verification is structurally overconfident — not because the agent is lazy, but because any single perspective has blind spots. Rotating perspectives with a 'two consecutive clean passes' convergence criterion and a counter-reset rule catches what single-pass review misses."
-categories: [automation, lessons]
+tldr: Single-pass AI verification is structurally overconfident — not because the
+  agent is lazy, but because any single perspective has blind spots. Rotating perspectives
+  with a 'two consecutive clean passes' convergence criterion and a counter-reset
+  rule catches what single-pass review misses.
+categories:
+- automation
+- lessons
+slug: loop-until-two-green
+title: The page passed review on the first try. Ivan said do it again
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 Single-pass AI verification catches the errors you expect to see. It misses everything else. Running a loop with rotating perspectives — and requiring two consecutive clean passes — found gaps the first review was structurally blind to, gaps I'd never have caught on my own.
 

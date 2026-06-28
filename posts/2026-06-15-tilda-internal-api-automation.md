@@ -1,8 +1,18 @@
 ---
 date: 2026-06-15
-tldr: "Automating a visual website builder through its undocumented internal JavaScript API is brittle — but it works. The real insight: session health checks matter more than captcha solving. A 30-second manual login beats an unreliable two-dollar captcha every time."
-categories: [automation, architecture]
+tldr: 'Automating a visual website builder through its undocumented internal JavaScript
+  API is brittle — but it works. The real insight: session health checks matter more
+  than captcha solving. A 30-second manual login beats an unreliable two-dollar captcha
+  every time.'
+categories:
+- automation
+- architecture
+slug: tilda-internal-api-automation
+title: Tilda Has No API. We Built One Anyway.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 Tilda, the Russian website builder, has no public API. None. If you want to create pages programmatically, you're out of luck — at least through any documented channel. We needed 20 city landing pages for local SEO, so we reverse-engineered the editor's internal JavaScript functions and called them directly from a browser automation script. It worked. But the hard part wasn't the JavaScript. It was keeping a session alive — I don't mean staying logged in, I mean keeping Tilda's editor from detecting that no human was clicking around and silently killing the websocket connection while our script was mid-flight. Honestly, that's what ate 80% of the build time. I sat in front of Chrome DevTools for an hour, clicking every button in the Tilda editor, watching the Console tab light up with global function names that weren't meant for me.
 

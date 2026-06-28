@@ -1,22 +1,50 @@
 ---
 date: 2026-06-26
-tldr: "On June 12, the US government suspended Fable 5 and Mythos 5 globally, three days after launch. The technical reason was a narrow jailbreak. The real reason this matters is different: export control law just reached commercial AI for the first time."
+tldr: 'On June 12, the US government suspended Fable 5 and Mythos 5 globally, three
+  days after launch. The technical reason was a narrow jailbreak. The real reason
+  this matters is different: export control law just reached commercial AI for the
+  first time.'
 format: explainer
-keywords: "claude fable 5 ban, fable 5 government shutdown, anthropic export controls, AI model access restrictions, US commerce department AI, fable 5 when coming back, AI geopolitics, export administration regulations AI"
-direct_answer: "The US Commerce Department suspended Claude Fable 5 and Mythos 5 on June 12, 2026, three days after launch, citing a jailbreak that could expose software vulnerabilities. Anthropic had to disable access globally. As of June 26, both models remain offline."
+keywords: claude fable 5 ban, fable 5 government shutdown, anthropic export controls,
+  AI model access restrictions, US commerce department AI, fable 5 when coming back,
+  AI geopolitics, export administration regulations AI
+direct_answer: The US Commerce Department suspended Claude Fable 5 and Mythos 5 on
+  June 12, 2026, three days after launch, citing a jailbreak that could expose software
+  vulnerabilities. Anthropic had to disable access globally. As of June 26, both models
+  remain offline.
 faq:
-  - q: "What exactly was the jailbreak that triggered the Fable 5 ban?"
-    a: "The US government claimed a technique that let users prompt Fable 5 to analyze a codebase and identify software vulnerabilities. Anthropic said the attack found only minor, previously known vulnerabilities and disputed that this warranted a full commercial suspension."
-  - q: "Does the Fable 5 ban affect other Claude models?"
-    a: "No. Claude Sonnet 4.6, Haiku 4.5, and Opus 4.8 remain fully available. Only Fable 5 and Mythos 5 were suspended. If you're seeing errors with those model IDs, switch to claude-sonnet-4-6 or claude-opus-4-8."
-  - q: "When will Fable 5 come back?"
-    a: "No confirmed date. July 8 is the most structurally significant checkpoint, when Anthropic's government ID verification policy takes effect, enabling US-first restoration. Prediction markets give 57% probability of restoration before July 1, 75% before July 17."
-  - q: "Why couldn't Anthropic just restrict access to foreign nationals instead of everyone?"
-    a: "They can't verify nationality in real time across hundreds of millions of users. Selective compliance wasn't technically feasible on short notice, so they suspended globally to ensure legal compliance with the directive."
-  - q: "Is this the first time AI model access has been restricted by government order?"
-    a: "At this scale, yes. China has faced chip export controls for years, but a US government directive disabling a commercial frontier model for all global users simultaneously, including American users, is unprecedented. This is the H20 chip logic applied to software."
-categories: [lessons, content]
+- q: What exactly was the jailbreak that triggered the Fable 5 ban?
+  a: The US government claimed a technique that let users prompt Fable 5 to analyze
+    a codebase and identify software vulnerabilities. Anthropic said the attack found
+    only minor, previously known vulnerabilities and disputed that this warranted
+    a full commercial suspension.
+- q: Does the Fable 5 ban affect other Claude models?
+  a: No. Claude Sonnet 4.6, Haiku 4.5, and Opus 4.8 remain fully available. Only Fable
+    5 and Mythos 5 were suspended. If you're seeing errors with those model IDs, switch
+    to claude-sonnet-4-6 or claude-opus-4-8.
+- q: When will Fable 5 come back?
+  a: No confirmed date. July 8 is the most structurally significant checkpoint, when
+    Anthropic's government ID verification policy takes effect, enabling US-first
+    restoration. Prediction markets give 57% probability of restoration before July
+    1, 75% before July 17.
+- q: Why couldn't Anthropic just restrict access to foreign nationals instead of everyone?
+  a: They can't verify nationality in real time across hundreds of millions of users.
+    Selective compliance wasn't technically feasible on short notice, so they suspended
+    globally to ensure legal compliance with the directive.
+- q: Is this the first time AI model access has been restricted by government order?
+  a: At this scale, yes. China has faced chip export controls for years, but a US
+    government directive disabling a commercial frontier model for all global users
+    simultaneously, including American users, is unprecedented. This is the H20 chip
+    logic applied to software.
+categories:
+- lessons
+- content
+slug: fable-5-government-shutdown
+title: Fable 5 Is Gone. Here's What Actually Happened, and Why It Changes Everything.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 On June 12, 2026, the [US Commerce Department](https://www.commerce.gov/about/bureaus-and-offices/bis) issued an emergency directive: Anthropic must suspend all access to Claude Fable 5 and Mythos 5 for any foreign national. Because Anthropic couldn't verify nationality in real time for hundreds of millions of users, they did the only thing possible: disabled both models for everyone. Three days after launch. Gone.
 

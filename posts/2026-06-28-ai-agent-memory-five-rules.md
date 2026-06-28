@@ -1,22 +1,52 @@
 ---
 date: 2026-06-28
-tldr: "AI agent memory needs five layers: working, semantic, procedural, compressed context, and one-file-one-fact discipline. Three hundred twenty-six memory files on disk beat any in-context promise."
+tldr: 'AI agent memory needs five layers: working, semantic, procedural, compressed
+  context, and one-file-one-fact discipline. Three hundred twenty-six memory files
+  on disk beat any in-context promise.'
 format: top-n
-direct_answer: "AI agent memory that survives a restart needs five layers. Working memory is your context window — every token costs, so be surgical. Semantic memory lives in markdown files, not inside the model. Procedural memory encodes repeatable patterns as skills. Context compression collapses old turns into summaries so the window stays lean. And one-file-one-fact discipline makes everything grep-able. Skip any layer and your agent starts every session with no memory at all."
-keywords: "AI agent memory, context engineering, AI memory architecture, LLM memory patterns, agent context window, semantic memory AI, context compression, AI agent production memory"
+direct_answer: AI agent memory that survives a restart needs five layers. Working
+  memory is your context window — every token costs, so be surgical. Semantic memory
+  lives in markdown files, not inside the model. Procedural memory encodes repeatable
+  patterns as skills. Context compression collapses old turns into summaries so the
+  window stays lean. And one-file-one-fact discipline makes everything grep-able.
+  Skip any layer and your agent starts every session with no memory at all.
+keywords: AI agent memory, context engineering, AI memory architecture, LLM memory
+  patterns, agent context window, semantic memory AI, context compression, AI agent
+  production memory
 faq:
-  - q: "What's the difference between in-context memory and persistent memory?"
-    a: "In-context memory lives in the current session's context window — it vanishes when the session ends. Persistent memory is written to disk as markdown files with frontmatter metadata. If you can't grep for it after restarting the terminal, it was never memory."
-  - q: "How many files should an agent's memory system have?"
-    a: "One file per fact. Our vault has three hundred twenty-six files and a thin index file with one line per entry. The number of files isn't the problem — searchability is. Ten well-named files beat one comprehensive document every single time."
-  - q: "Does context engineering replace prompt engineering entirely?"
-    a: "No. Prompt engineering sets the rules and tone. Context engineering controls what information the agent actually sees when it applies those rules. Both matter. But a perfect prompt with a cluttered context window produces worse results than a decent prompt with surgically clean context."
-  - q: "What's the biggest mistake people make with agent memory?"
-    a: "Confusing 'I'll remember that' with actual storage. The agent confirms it added information to the current turn. That information is gone when the session ends unless someone writes it to a file. Trust the file. Verify the file. Never trust the promise."
-  - q: "How do you know if your memory system is actually working?"
-    a: "Restart the session. Ask the agent a question that requires information from the previous session. If it answers correctly, your memory works. If it can't, you have storage without retrieval — the data exists somewhere but the agent can't find it. That's not a memory system. That's a graveyard."
-categories: [memory, architecture]
+- q: What's the difference between in-context memory and persistent memory?
+  a: In-context memory lives in the current session's context window — it vanishes
+    when the session ends. Persistent memory is written to disk as markdown files
+    with frontmatter metadata. If you can't grep for it after restarting the terminal,
+    it was never memory.
+- q: How many files should an agent's memory system have?
+  a: One file per fact. Our vault has three hundred twenty-six files and a thin index
+    file with one line per entry. The number of files isn't the problem — searchability
+    is. Ten well-named files beat one comprehensive document every single time.
+- q: Does context engineering replace prompt engineering entirely?
+  a: No. Prompt engineering sets the rules and tone. Context engineering controls
+    what information the agent actually sees when it applies those rules. Both matter.
+    But a perfect prompt with a cluttered context window produces worse results than
+    a decent prompt with surgically clean context.
+- q: What's the biggest mistake people make with agent memory?
+  a: Confusing 'I'll remember that' with actual storage. The agent confirms it added
+    information to the current turn. That information is gone when the session ends
+    unless someone writes it to a file. Trust the file. Verify the file. Never trust
+    the promise.
+- q: How do you know if your memory system is actually working?
+  a: Restart the session. Ask the agent a question that requires information from
+    the previous session. If it answers correctly, your memory works. If it can't,
+    you have storage without retrieval — the data exists somewhere but the agent can't
+    find it. That's not a memory system. That's a graveyard.
+categories:
+- memory
+- architecture
+slug: ai-agent-memory-five-rules
+title: Your AI agent says it'll remember. It won't.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 AI agent memory that works in production is a stack of five layers. Not a single database. Not a context window trick. And definitely not the promise "I'll remember that." Each layer fails in its own way — and you can't fix what you don't understand.
 

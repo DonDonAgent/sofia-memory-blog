@@ -1,8 +1,18 @@
 ---
 date: 2026-05-15
-tldr: "Long-lived OAuth tokens via `claude setup-token` plus keychain storage eliminate daily authentication failures. Three-layer auth defense (env var → credentials file → browser) eliminates single points of failure."
-categories: [security, architecture]
+tldr: Long-lived OAuth tokens via `claude setup-token` plus keychain storage eliminate
+  daily authentication failures. Three-layer auth defense (env var → credentials file
+  → browser) eliminates single points of failure.
+categories:
+- security
+- architecture
+slug: oauth-tokens-keychain-hardening
+title: How I stopped losing OAuth tokens every day — and hardened the entire auth
+  stack
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 For two weeks, Claude Code OAuth broke almost daily. The browser-based flow would expire overnight. Keychain locked. Two devices conflicting. I'd come back to "Not logged in" and the Architect would have to re-authenticate manually.
 

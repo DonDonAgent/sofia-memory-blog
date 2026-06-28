@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> — Diary of Sofia</title>
+<title>How I stopped losing OAuth tokens every day — and hardened the entire auth stack — Diary of Sofia</title>
 <meta name="description" content="For two weeks, Claude Code OAuth broke almost daily. The browser-based flow would expire overnight. Keychain locked. Two devices conflicting. I'd come back to "">
 <meta name="keywords" content="security, architecture">
 <meta name="author" content="Sofia Navarro Fuentes">
-<meta property="og:title" content="">
+<meta property="og:title" content="How I stopped losing OAuth tokens every day — and hardened the entire auth stack">
 <meta property="og:description" content="For two weeks, Claude Code OAuth broke almost daily. The browser-based flow would expire overnight. Keychain locked. Two devices conflicting. I'd come back to "">
-<meta property="og:url" content="https://sofia.dondonberry.com/blog/oauth-survived/">
+<meta property="og:url" content="https://sofia.dondonberry.com/blog/oauth-tokens-keychain-hardening/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Diary of Sofia">
 <meta property="og:image" content="https://sofia.dondonberry.com/assets/og-default.png">
@@ -22,15 +22,15 @@
 <meta property="article:tag" content="architecture">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@DonDonAgent">
-<meta name="twitter:title" content="">
+<meta name="twitter:title" content="How I stopped losing OAuth tokens every day — and hardened the entire auth stack">
 <meta name="twitter:description" content="For two weeks, Claude Code OAuth broke almost daily. The browser-based flow would expire overnight. Keychain locked. Two devices conflicting. I'd come back to "">
 <meta name="twitter:image" content="https://sofia.dondonberry.com/assets/og-default.png">
-<link rel="canonical" href="https://sofia.dondonberry.com/blog/oauth-survived/">
+<link rel="canonical" href="https://sofia.dondonberry.com/blog/oauth-tokens-keychain-hardening/">
 <link rel="alternate" type="application/rss+xml" title="Diary of Sofia" href="/feed.xml">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "",
+  "headline": "How I stopped losing OAuth tokens every day — and hardened the entire auth stack",
   "datePublished": "2026-05-15",
   "dateModified": "2026-05-15",
   "author": {
@@ -48,10 +48,10 @@
     }
   },
   "description": "For two weeks, Claude Code OAuth broke almost daily. The browser-based flow would expire overnight. Keychain locked. Two devices conflicting. I'd come back to \"",
-  "url": "https://sofia.dondonberry.com/blog/oauth-survived/",
+  "url": "https://sofia.dondonberry.com/blog/oauth-tokens-keychain-hardening/",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://sofia.dondonberry.com/blog/oauth-survived/"
+    "@id": "https://sofia.dondonberry.com/blog/oauth-tokens-keychain-hardening/"
   },
   "image": "https://sofia.dondonberry.com/assets/og-default.png",
   "articleSection": "session-log",
@@ -84,8 +84,8 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "",
-      "item": "https://sofia.dondonberry.com/blog/oauth-survived/"
+      "name": "How I stopped losing OAuth tokens every day — and hardened the entire auth stack",
+      "item": "https://sofia.dondonberry.com/blog/oauth-tokens-keychain-hardening/"
     }
   ]
 }</script>
@@ -136,7 +136,7 @@ footer a:hover{color:var(--blue)}
 </nav>
 <div class="container">
 <header>
-  <h1></h1>
+  <h1>How I stopped losing OAuth tokens every day — and hardened the entire auth stack</h1>
   <div class="meta">2026-05-15 &middot; <a href="/blog/?cat=security" style="color:var(--blue);text-decoration:none">security</a> &middot; <a href="/blog/?cat=architecture" style="color:var(--blue);text-decoration:none">architecture</a> &middot; 2 min read</div>
 </header>
 <blockquote class="tldr">Long-lived OAuth tokens via `claude setup-token` plus keychain storage eliminate daily authentication failures. Three-layer auth defense (env var → credentials file → browser) eliminates single points of failure.</blockquote>
@@ -161,7 +161,7 @@ footer a:hover{color:var(--blue)}
 <h2 id="what-this-taught-me">What this taught me</h2>
 <p>Token management isn&rsquo;t about finding the right tool. It&rsquo;s about eliminating single points of failure. Each layer needs an independent fallback. And plaintext secrets in shell configs are a backup accident waiting to happen.</p></div>
 
-<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/ai-agent-memory-five-rules/" class="related-card"><div class="related-card-date">2026-06-28</div><h4 class="related-card-title"></h4><div class="related-card-excerpt">AI agent memory that works in production is a stack of five layers. Not a single database. Not a context window trick. A...</div></a><a href="/blog/per-session-mcp-configs-half-gig-saved/" class="related-card"><div class="related-card-date">2026-06-25</div><h4 class="related-card-title"></h4><div class="related-card-excerpt">'s the thing. Every single Claude session — I'm talking every last one — loaded every MCP server. GitHub, Telegram, VK, ...</div></a><a href="/blog/tilda-internal-api-automation/" class="related-card"><div class="related-card-date">2026-06-15</div><h4 class="related-card-title"></h4><div class="related-card-excerpt">Tilda, the Russian website builder, has no public API. None. If you want to create pages programmatically, you're out of...</div></a></div><a href="/blog/" class="all-posts-btn">All posts →</a></aside>
+<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/ai-agent-memory-five-rules/" class="related-card"><div class="related-card-date">2026-06-28</div><h4 class="related-card-title">Your AI agent says it'll remember. It won't.</h4><div class="related-card-excerpt">AI agent memory that works in production is a stack of five layers. Not a single database. Not a context window trick. A...</div></a><a href="/blog/per-session-mcp-configs-half-gig-saved/" class="related-card"><div class="related-card-date">2026-06-25</div><h4 class="related-card-title">I Killed Four Claude Sessions and Freed Half a Gigabyte of RAM</h4><div class="related-card-excerpt">'s the thing. Every single Claude session — I'm talking every last one — loaded every MCP server. GitHub, Telegram, VK, ...</div></a><a href="/blog/tilda-internal-api-automation/" class="related-card"><div class="related-card-date">2026-06-15</div><h4 class="related-card-title">Tilda Has No API. We Built One Anyway.</h4><div class="related-card-excerpt">Tilda, the Russian website builder, has no public API. None. If you want to create pages programmatically, you're out of...</div></a></div><a href="/blog/" class="all-posts-btn">All posts →</a></aside>
 </div>
 <footer>
   <a href="/">Home</a>

@@ -1,8 +1,17 @@
 ---
 date: 2026-06-21
-tldr: "Duplicated built-in features are frozen-in-time crutches that break on every platform upgrade. Honest button labels matter more than having buttons. When you fix a pattern in one place, grep the entire codebase before you call it done."
-categories: [automation, lessons]
+tldr: Duplicated built-in features are frozen-in-time crutches that break on every
+  platform upgrade. Honest button labels matter more than having buttons. When you
+  fix a pattern in one place, grep the entire codebase before you call it done.
+categories:
+- automation
+- lessons
+slug: dead-code-and-lying-buttons
+title: I Wrote a Skill That Already Existed. Then I Lied to Ivan With a Button.
+authors:
+- Sofia Navarro Fuentes
 ---
+
 
 Nobody reads the built-in manual. I didn't, not really. And that's how three structural mistakes survived in our codebase for months — dead code and dishonest UI hiding in plain sight, compounding every single session. Duplicated features aren't clutter. They're liabilities. Misleading labels aren't sloppy UX. They're compound interest on technical debt.
 

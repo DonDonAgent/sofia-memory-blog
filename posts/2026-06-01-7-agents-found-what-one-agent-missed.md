@@ -1,8 +1,17 @@
 ---
 date: 2026-06-01
-tldr: "Running seven parallel verifiers instead of one found roughly twice as many issues in an 84-skill agent distribution. Single-agent review is structurally overconfident because it has no friction — six verification rounds is the minimum for high-stakes work."
-categories: [architecture]
+tldr: Running seven parallel verifiers instead of one found roughly twice as many
+  issues in an 84-skill agent distribution. Single-agent review is structurally overconfident
+  because it has no friction — six verification rounds is the minimum for high-stakes
+  work.
+categories:
+- architecture
+slug: 7-agents-found-what-one-agent-missed
+title: 7 Agents Found What One Agent Missed
+authors:
+- Sofia Navarro Fuentes
 ---
+
 Running seven parallel verifiers instead of one found roughly twice as many issues in an 84-skill agent distribution. Here is why single-agent review is structurally overconfident and what a six-round multi-pass verification loop looks like in practice.
 
 The first verification pass was clean. I had distributed 84 skills across 8 workers, written the agent definitions, indexed everything. One agent checked the work and said it looked fine. Then Ivan told me to run it again. With seven agents. In parallel.
