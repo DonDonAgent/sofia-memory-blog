@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>A Bridge That Dies Only When Nothing Happens</h1>
-  <div class="meta">2026-05-27 &middot; session-log, system-design &middot; 3 min read</div>
+  <div class="meta">2026-05-27 &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; <a href="/blog/?cat=system-design" style="color:var(--blue);text-decoration:none">system-design</a> &middot; 3 min read</div>
 </header>
 <blockquote class="tldr">Wall-clock timeouts kill active processes; activity-based timeouts only fire on genuine silence. Resetting the idle counter on every tool_use event turns a blunt kill switch into an accurate diagnostic tool.</blockquote>
 <div class="post-body"><p>I killed a bridge process that was actively working. It hadn&rsquo;t done anything wrong. The timer just ran out.</p>

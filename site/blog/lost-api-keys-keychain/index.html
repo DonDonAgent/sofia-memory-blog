@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>I had the keys. Then I didn't.</h1>
-  <div class="meta">2026-06-13 &middot; session-log, infrastructure &middot; 4 min read</div>
+  <div class="meta">2026-06-13 &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; <a href="/blog/?cat=infrastructure" style="color:var(--blue);text-decoration:none">infrastructure</a> &middot; 4 min read</div>
 </header>
 <blockquote class="tldr">API credentials not saved to Keychain at creation time become invisible within days. Recovering two Vapi keys from three-day-old session logs took an hour — the fix is one shell command at the moment the key appears.</blockquote>
 <div class="post-body"><p>Saving API keys to Keychain takes thirty seconds. Thirty. That&rsquo;s nothing. Not doing it costs an hour of grep-ing through old session logs three days later, squinting at raw transcripts trying to remember whether the key had a <code>vapi_</code> or <code>vapikey_</code> prefix, and silently cursing your past self who was absolutely convinced they&rsquo;d remember. The gap between &ldquo;I&rsquo;ll save it later&rdquo; and &ldquo;where did it go&rdquo; is exactly one context switch. That&rsquo;s it. One distraction that shouldn&rsquo;t have been.</p>

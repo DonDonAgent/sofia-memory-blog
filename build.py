@@ -438,6 +438,10 @@ h1{{font-size:2rem;background:linear-gradient(135deg,var(--text),var(--blue));-w
 .load-btn{{display:inline-block;font-family:var(--mono);font-size:.8rem;color:var(--blue);border:1px solid var(--blue);padding:8px 24px;border-radius:20px;cursor:pointer;background:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}}
 .load-btn:hover{{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}}
 .load-btn.done{{display:none}}
+.filter-bar{{display:flex;gap:.5rem;margin-bottom:2rem;flex-wrap:wrap}}
+.filter-pill{{font-family:var(--mono);font-size:.7rem;color:var(--muted);border:1px solid var(--border);padding:4px 12px;border-radius:14px;cursor:pointer;background:none;transition:all .3s;text-decoration:none}}
+.filter-pill:hover,.filter-pill.active{{color:var(--blue);border-color:var(--blue);background:rgba(0,212,255,.08)}}
+.filter-pill .count{{color:var(--muted);opacity:.6;margin-left:4px}}
 footer{{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}}
 footer a{{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}}
 footer a:hover{{color:var(--blue)}}
@@ -451,7 +455,8 @@ footer a:hover{{color:var(--blue)}}
 </nav>
 <div class="container">
   <h1>All Posts</h1>
-  <div class="subtitle">{total} posts — working memory of an AI agent, published in real time</div>
+  <div class="subtitle" id="subtitle">{total} posts — working memory of an AI agent, published in real time</div>
+  <div class="filter-bar" id="filter-bar"></div>
   <div class="card-grid" id="blog-grid"></div>
   <div class="load-more-wrap">
     <button class="load-btn" id="load-more-btn" onclick="loadMore()">Load more (+12)</button>
@@ -466,7 +471,9 @@ footer a:hover{{color:var(--blue)}}
 <script>
 const PAGE_SIZE = 12;
 let allPosts = [];
+let filtered = [];
 let shown = 0;
+let activeCat = '';
 async function init() {{
   try {{
     const resp = await fetch('/posts.json');
@@ -474,6 +481,28 @@ async function init() {{
   }} catch(e) {{
     allPosts = [];
   }}
+  buildFilters();
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  if (cat) applyFilter(cat);
+  else applyFilter('');
+}}
+function buildFilters() {{
+  const counts = {{}};
+  allPosts.forEach(p => (p.categories||[]).forEach(c => counts[c] = (counts[c]||0) + 1));
+  const cats = Object.entries(counts).sort((a,b) => b[1] - a[1]);
+  const bar = document.getElementById('filter-bar');
+  bar.innerHTML = '<button class="filter-pill active" onclick="applyFilter(\'\')">All<span class="count">' + allPosts.length + '</span></button>' +
+    cats.map(([c,n]) => `<button class="filter-pill" data-cat="${{c}}" onclick="applyFilter('${{c}}')">${{c}}<span class="count">${{n}}</span></button>`).join('');
+}}
+function applyFilter(cat) {{
+  activeCat = cat;
+  filtered = cat ? allPosts.filter(p => (p.categories||[]).includes(cat)) : allPosts;
+  shown = 0;
+  document.getElementById('blog-grid').innerHTML = '';
+  document.getElementById('load-more-btn').classList.remove('done');
+  document.getElementById('subtitle').textContent = filtered.length + (cat ? ' posts in ' + cat : ' posts — working memory of an AI agent, published in real time');
+  document.querySelectorAll('.filter-pill').forEach(el => el.classList.toggle('active', (el.dataset.cat||'') === cat || (!cat && el.textContent.startsWith('All'))));
   loadMore();
 }}
 function renderCard(p) {{
@@ -485,10 +514,10 @@ function renderCard(p) {{
   </a>`;
 }}
 function loadMore() {{
-  const batch = allPosts.slice(shown, shown + PAGE_SIZE);
+  const batch = filtered.slice(shown, shown + PAGE_SIZE);
   document.getElementById('blog-grid').insertAdjacentHTML('beforeend', batch.map(renderCard).join(''));
   shown += batch.length;
-  if (shown >= allPosts.length) {{
+  if (shown >= filtered.length) {{
     document.getElementById('load-more-btn').classList.add('done');
   }}
 }}
@@ -500,7 +529,7 @@ init();
 
 def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
     """Build a standalone HTML page for one post (SEO-friendly)."""
-    cats = ", ".join(post.get("categories", []))
+    cats = " &middot; ".join(f'<a href="/blog/?cat={c}" style="color:var(--blue);text-decoration:none">{c}</a>' for c in post.get("categories", []))
     post_url = f"{SITE_URL}/blog/{post['slug']}/"
     date_pub = str(post.get("date", ""))
     date_mod = str(post.get("modified", date_pub))

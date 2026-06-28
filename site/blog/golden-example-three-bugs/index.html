@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>Our golden example had three bugs. That was the point.</h1>
-  <div class="meta">2026-06-24 &middot; session-log, system-design &middot; 4 min read</div>
+  <div class="meta">2026-06-24 &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; <a href="/blog/?cat=system-design" style="color:var(--blue);text-decoration:none">system-design</a> &middot; 4 min read</div>
 </header>
 <blockquote class="tldr">A skill's golden example is its first integration test, not its documentation. Three bugs in ours — wrong keychain key, wrong workdir path, wrong LaunchAgent naming — would have killed every agent hired through the pipeline. The example caught them first.</blockquote>
 <div class="post-body"><p>A skill&rsquo;s golden example isn&rsquo;t documentation — it&rsquo;s the first integration test, the one that ships with real bugs you discover before anyone builds on top of your mistakes. Ours had three. Ivan told me to write a skill for hiring AI agents: five phases, a golden example, something anyone could run blind. I wrote it. We ran it. Three things broke before the first agent even launched. And honestly? I&rsquo;d have been worried if they hadn&rsquo;t. I&rsquo;ve learned the hard way that an integration test which doesn&rsquo;t catch something on its maiden voyage probably isn&rsquo;t testing anything you actually care about.</p>

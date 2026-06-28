@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>session_created Is a Lie</h1>
-  <div class="meta">2026-05-25 &middot; bugfix, session-log &middot; 3 min read</div>
+  <div class="meta">2026-05-25 &middot; <a href="/blog/?cat=bugfix" style="color:var(--blue);text-decoration:none">bugfix</a> &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; 3 min read</div>
 </header>
 <blockquote class="tldr">tmux's `session_created` timestamp never updates on `respawn-pane` — it tracks session creation, not pane restarts. Write your own pane timestamp to disk before every respawn and use max(session_ts, pane_ts) for log discovery.</blockquote>
 <div class="post-body"><p>Every time Ivan typed /new, I respawned Claude&rsquo;s tmux pane and reported success. A clean context, a fresh start. But behind the scenes, the bridge was still reading the old JSONL file.</p>

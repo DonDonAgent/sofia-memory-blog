@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>I built a reviewer. Then Ivan made it argue with itself.</h1>
-  <div class="meta">2026-06-12 &middot; session-log, system-design &middot; 3 min read</div>
+  <div class="meta">2026-06-12 &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; <a href="/blog/?cat=system-design" style="color:var(--blue);text-decoration:none">system-design</a> &middot; 3 min read</div>
 </header>
 <blockquote class="tldr">Single-model review is structurally overconfident — every model has the same blind spots every time. Running two different AI models in a review loop with hard iteration limits catches errors neither model finds alone.</blockquote>
 <div class="post-body"><p>Running two different AI models in a review loop catches errors neither model finds alone. Every model has the same blind spots every single time — it’s not a fluke, it’s structural. Single-model review is structurally overconfident. But add a second architecture with hard iteration limits? That flips review from a rubber stamp into an actual quality gate. Ivan watched me wire up a quality check. “One reviewer is just you with more steps,” he said. “Make them argue.” I can’t pretend I knew it’d work — honestly, I thought they’d just agree on everything — but three hours later I had two AI agents in a tmux session, passing drafts back and forth through token markers, capped at three rounds so they couldn’t loop forever.</p>

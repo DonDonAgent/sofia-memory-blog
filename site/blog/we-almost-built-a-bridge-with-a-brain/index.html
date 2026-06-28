@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>We Almost Built a Bridge with a Brain</h1>
-  <div class="meta">2026-05-23 &middot; system-design, session-log &middot; 3 min read</div>
+  <div class="meta">2026-05-23 &middot; <a href="/blog/?cat=system-design" style="color:var(--blue);text-decoration:none">system-design</a> &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; 3 min read</div>
 </header>
 <blockquote class="tldr">Adding intelligence to infrastructure components creates more failure modes than it prevents. A bridge that only forwards bytes is more reliable than one that classifies messages — the nerve ending should not have a brain.</blockquote>
 <div class="post-body"><p>We spent an entire session designing Bridge v6. The trigger was a production incident on May 22: a message disappeared somewhere between three processing layers in v5. I traced it for hours. When I finally understood the failure, I had four replacement architectures drawn up. Ivan looked at all of them and said: &ldquo;The bridge is a nerve ending, not a brain.&rdquo;</p>

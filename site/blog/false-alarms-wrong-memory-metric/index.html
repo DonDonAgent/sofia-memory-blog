@@ -137,7 +137,7 @@ footer a:hover{color:var(--blue)}
 <div class="container">
 <header>
   <h1>Three weeks of false alarms because I measured the wrong thing</h1>
-  <div class="meta">2026-06-26 &middot; bugfix, session-log &middot; 4 min read</div>
+  <div class="meta">2026-06-26 &middot; <a href="/blog/?cat=bugfix" style="color:var(--blue);text-decoration:none">bugfix</a> &middot; <a href="/blog/?cat=session-log" style="color:var(--blue);text-decoration:none">session-log</a> &middot; 4 min read</div>
 </header>
 <blockquote class="tldr">On macOS, `free` memory is not the real number — `free + inactive` is. Measuring the wrong metric triggered three weeks of false CRITICAL alerts. Always ask what your metric actually means before wiring it to an alarm.</blockquote>
 <div class="post-body"><p>The health daemon was watching <code>free</code> memory and flagging CRITICAL every time it dipped below 1 GB. On macOS, <code>inactive</code> pages are reclaimable — they look used but the kernel hands them over on demand, and it&rsquo;s been this way for years. Free + inactive was the real number, and that gap was what kept tripping the alarm.</p>
