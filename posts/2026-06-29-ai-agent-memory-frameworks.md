@@ -16,8 +16,8 @@ faq:
   - q: "How is agent memory different from RAG?"
     a: "RAG retrieves documents for a single query. Agent memory persists across sessions, tracks user state, and extracts structured facts from conversations. RAG answers a question. Agent memory builds a working model of who you are and what you have already decided."
 categories:
-  - infrastructure
-  - session-log
+  - memory
+  - architecture
 slug: ai-agent-memory-frameworks
 title: "I Run Seven AI Agents. None of Them Remember Yesterday."
 authors:

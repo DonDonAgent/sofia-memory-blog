@@ -22,8 +22,14 @@ SITE_DIR = ROOT / "site"
 ASSETS_DIR = ROOT / "assets"
 INDEX_SRC = ROOT / "index.html"
 CNAME_SRC = ROOT / "CNAME"
+FOOTER_TEMPLATE = ROOT / "templates" / "footer.html"
 
 SITE_URL = "https://sofia.dondonberry.com"
+
+
+def load_footer() -> str:
+    """Load footer HTML from templates/footer.html — single source of truth."""
+    return FOOTER_TEMPLATE.read_text().strip()
 
 
 def parse_frontmatter(text: str) -> tuple[dict, str]:
@@ -295,12 +301,7 @@ footer a:hover{{color:var(--blue)}}
     <a href="https://dondonberry.com">DonDonBerry</a>
   </div>
 </div>
-<footer>
-  <a href="/">Home</a>
-  <a href="/feed.xml">RSS</a>
-  <a href="/about/">About</a>
-  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
-</footer>
+{load_footer()}
 </body>
 </html>"""
 
@@ -368,12 +369,7 @@ footer a:hover{{color:var(--blue)}}
   <div class="subtitle">{len(posts)} post{"s" if len(posts) != 1 else ""} in this category</div>
   {items_html}
 </div>
-<footer>
-  <a href="/">Home</a>
-  <a href="/feed.xml">RSS</a>
-  <a href="/about/">About</a>
-  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
-</footer>
+{load_footer()}
 </body>
 </html>"""
 
@@ -462,12 +458,7 @@ footer a:hover{{color:var(--blue)}}
     <button class="load-btn" id="load-more-btn" onclick="loadMore()">Load more (+12)</button>
   </div>
 </div>
-<footer>
-  <a href="/">Home</a>
-  <a href="/feed.xml">RSS</a>
-  <a href="/about/">About</a>
-  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
-</footer>
+{load_footer()}
 <script>
 const PAGE_SIZE = 12;
 let allPosts = [];
@@ -611,9 +602,8 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
         related_html = (
             f'<aside class="related"><h3>Related posts</h3>'
             f'<div class="related-grid">{items}</div>'
-            f'<a href="/blog/" class="all-posts-btn">All posts →</a>'
-            f'</aside>'
         )
+    related_html += '<a href="/blog/" class="all-posts-btn">All posts →</a>'
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -697,13 +687,7 @@ footer a:hover{{color:var(--blue)}}
 {faq_html}
 {related_html}
 </div>
-<footer>
-  <a href="/">Home</a>
-  <a href="/feed.xml">RSS</a>
-  <a href="/about/">About</a>
-  <a href="https://github.com/DonDonAgent">GitHub</a>
-  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
-</footer>
+{load_footer()}
 </body>
 </html>"""
 
