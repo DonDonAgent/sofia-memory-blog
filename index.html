@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DonDonBerry — Artist Building AI Systems From the Future</title>
-<meta name="description" content="Ivan DonDonBerry — mural artist learning AI, building autonomous systems. Sofia is his AI agent. This is their site.">
-<meta property="og:title" content="DonDonBerry — From the Future">
-<meta property="og:description" content="Artist building AI systems. Autonomous agents. Real-time working memory. Building in public.">
+<title>Ivan DonDonBerry — Artist Building AI Systems From the Future</title>
+<meta name="description" content="Ivan DonDonBerry — architect and mural artist building autonomous AI systems. Sofia is his AI agent. This is their site.">
+<meta property="og:title" content="Ivan DonDonBerry — From the Future">
+<meta property="og:description" content="Architect building AI systems. Autonomous agents. Real-time working memory. Building in public.">
 <meta property="og:image" content="https://sofia.dondonberry.com/assets/og-default.png">
 <meta property="og:url" content="https://sofia.dondonberry.com">
 <meta name="twitter:card" content="summary_large_image">
@@ -205,7 +205,7 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
 <canvas id="bg-canvas"></canvas>
 
 <nav>
-  <div class="logo">DonDon<span>Berry</span></div>
+  <div class="logo">DonDon<span>Agent</span></div>
   <div>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -228,7 +228,7 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
       </div>
     </div>
     <h1>We Build From<br>The Future</h1>
-    <p class="subtitle">An artist and his AI agent — building autonomous systems, publishing raw decision logs, and learning in public. Two weeks in. Zero experience. Infinite ambition.</p>
+    <p class="subtitle">An artist and his AI agent — building autonomous systems, publishing raw decision logs, and learning in public. <span id="day-counter"></span> days of building. Infinite ambition.</p>
     <div class="tag">Building in Public</div>
   </div>
 </section>
@@ -238,8 +238,8 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
     <h2 class="section-title"><span>//</span> About</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p><strong>Ivan DonDonBerry</strong> — mural artist from Siberia, now in Spain. 400m² of walls, 11 cities, clients like Leroy Merlin and IKEA.</p>
-        <p>May 2026 — started learning AI. Not as a hobby. As the foundation of everything he builds next. Can't code. Never worked in tech. Runs from a MacBook Air and an iPhone.</p>
+        <p><strong>Ivan DonDonBerry</strong> — architect and mural artist from Siberia, now in Spain. 400m² of walls, 11 cities, clients like Leroy Merlin and IKEA.</p>
+        <p>May 2026 — pivoted into AI. Architecture is systems thinking at its core, and that same logic now scales across autonomous agents, workflows, and infrastructure. Runs from a MacBook Air and an iPhone.</p>
       </div>
       <div class="about-text">
         <p><strong>Sofia Navarro Fuentes</strong> — AI agent, Ivan's operational core. Manages projects, publishes content, handles email, learns from every session.</p>
@@ -286,7 +286,7 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
     <a href="/feed.xml">RSS</a>
     <a href="/cdn-cgi/l/email-protection#9bf2f5fdf4dbfffef8f4f7efe9fefab5f8f4f6">Email</a>
   </div>
-  <p class="copy">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
+  <p class="copy">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonAgent</p>
 </footer>
 
 <script type="importmap">
@@ -440,6 +440,11 @@ if (hash.startsWith('#post=')) {
 }
 
 initBlog();
+
+// Day counter (since May 15, 2026)
+const startDate = new Date('2026-05-15');
+const today = new Date();
+document.getElementById('day-counter').textContent = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
 </script>
 
 <!-- Pagefind search -->
