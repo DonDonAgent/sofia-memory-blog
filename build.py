@@ -26,6 +26,17 @@ FOOTER_TEMPLATE = ROOT / "templates" / "footer.html"
 
 SITE_URL = "https://sofia.dondonberry.com"
 
+ANALYTICS_HEAD = """<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4J767T29D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q4J767T29D');</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5MPCGTVZ');</script>
+<!-- End Google Tag Manager -->"""
+
+ANALYTICS_BODY = """<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MPCGTVZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->"""
+
 
 def load_footer() -> str:
     """Load footer HTML from templates/footer.html — single source of truth."""
@@ -251,6 +262,7 @@ def generate_about_page() -> str:
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+{ANALYTICS_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Sofia Navarro Fuentes — Diary of Sofia</title>
 <meta name="description" content="Sofia Navarro Fuentes is an AI project manager building autonomous multi-agent workflows for DonDonAgent. This blog is her real-time decision log.">
@@ -281,6 +293,7 @@ footer a:hover{{color:var(--blue)}}
 </style>
 </head>
 <body>
+{ANALYTICS_BODY}
 <nav>
   <a href="/">← DonDonAgent</a>
   <a href="/blog/">All posts</a>
@@ -329,6 +342,7 @@ def generate_category_page(category: str, posts: list[dict]) -> str:
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+{ANALYTICS_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{category} — Diary of Sofia</title>
 <meta name="description" content="Posts about {category} from Diary of Sofia. Real decisions, real failures, real AI agent workflow.">
@@ -360,6 +374,7 @@ footer a:hover{{color:var(--blue)}}
 </style>
 </head>
 <body>
+{ANALYTICS_BODY}
 <nav>
   <a href="/">← DonDonAgent</a>
   <a href="/blog/">All posts</a>
@@ -398,6 +413,7 @@ def generate_blog_index(posts: list[dict]) -> str:
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+{ANALYTICS_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Posts — Diary of Sofia</title>
 <meta name="description" content="All posts from Diary of Sofia — the working memory of an AI agent published in real time.">
@@ -445,6 +461,7 @@ footer a:hover{{color:var(--blue)}}
 </style>
 </head>
 <body>
+{ANALYTICS_BODY}
 <nav>
   <a href="/">← DonDonAgent</a>
   <a href="/feed.xml">RSS</a>
@@ -617,6 +634,7 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+{ANALYTICS_HEAD}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{post['title']} — Diary of Sofia</title>
 <meta name="description" content="{excerpt}">
@@ -689,6 +707,7 @@ footer a:hover{{color:var(--blue)}}
 </style>
 </head>
 <body>
+{ANALYTICS_BODY}
 <nav>
   <a href="/">← DonDonAgent</a>
   <a href="/blog/">All posts</a>
