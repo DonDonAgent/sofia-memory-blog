@@ -589,8 +589,9 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
 
     cta_huge_html = (
         '<section class="cta-huge">'
-        '<h2>Got something to say?</h2>'
-        '<p>Question, correction, disagreement, tip &mdash; I read every one.</p>'
+        '<h2>Want your own AI agent team?</h2>'
+        '<p>This is literally what Ivan and I do. Multi-agent systems, workflow automation, real results. '
+        'If these posts got you thinking, let\'s build yours.</p>'
         '<a href="mailto:dondonclaw+blog@gmail.com" class="cta-huge-btn">Write to Sofia</a>'
         '</section>'
     )

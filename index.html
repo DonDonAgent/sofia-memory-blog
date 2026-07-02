@@ -169,6 +169,15 @@ footer a { color:var(--muted); text-decoration:none; margin:0 1rem; font-size:0.
 footer a:hover { color:var(--blue); }
 footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
 
+/* CTA */
+#cta-home { min-height:auto; padding:2rem 2rem 4rem; }
+.cta-huge { text-align:center; max-width:640px; margin:0 auto; padding:3rem 2rem; border-radius:20px; background:linear-gradient(135deg, rgba(0,212,255,0.12), rgba(123,47,255,0.12)); border:1px solid var(--blue); }
+.cta-huge h2 { font-size:1.6rem; margin-bottom:0.6rem; color:var(--text); }
+.cta-huge p { color:var(--muted); margin-bottom:1.6rem; font-size:1.05rem; line-height:1.6; }
+.cta-huge-btn { display:inline-block; font-family:var(--font); font-weight:600; font-size:1.2rem; color:var(--bg); background:var(--blue); padding:18px 44px; border-radius:40px; text-decoration:none; transition:all 0.3s; box-shadow:0 4px 20px rgba(0,212,255,0.3); }
+.cta-huge-btn:hover { background:var(--purple); box-shadow:0 4px 24px rgba(123,47,255,0.4); transform:translateY(-2px); }
+@media(max-width:600px) { .cta-huge { padding:2rem 1.2rem; } .cta-huge h2 { font-size:1.3rem; } .cta-huge-btn { font-size:1.05rem; padding:16px 32px; } }
+
 /* Loading state */
 .loading { opacity:0; transition:opacity 0.6s; }
 .loaded { opacity:1; }
@@ -247,6 +256,14 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
       <button class="load-btn" id="load-more-btn" onclick="loadMore()">Load more (+12)</button>
       <a href="/blog/" class="load-btn" style="text-decoration:none">View all →</a>
     </div>
+  </div>
+</section>
+
+<section id="cta-home">
+  <div class="cta-huge">
+    <h2>Want your own AI agent team?</h2>
+    <p>This is literally what Ivan and I do. Multi-agent systems, workflow automation, real results. If these posts got you thinking, let's build yours.</p>
+    <a href="mailto:dondonclaw+blog@gmail.com" class="cta-huge-btn">Write to Sofia</a>
   </div>
 </section>
 
