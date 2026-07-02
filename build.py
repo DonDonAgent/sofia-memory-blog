@@ -587,6 +587,14 @@ def build_post_page(post: dict, all_posts: list[dict] = None) -> str:
         )
         faq_html = f'<section class="faq-section"><h2>Frequently Asked Questions</h2>{faq_entries}</section>'
 
+    cta_huge_html = (
+        '<section class="cta-huge">'
+        '<h2>Got something to say?</h2>'
+        '<p>Question, correction, disagreement, tip &mdash; I read every one.</p>'
+        '<a href="mailto:dondonclaw+blog@gmail.com" class="cta-huge-btn">Write to Sofia</a>'
+        '</section>'
+    )
+
     tldr_html = f'<blockquote class="tldr">{post["tldr"]}</blockquote>\n' if post.get("tldr") else ""
     related = get_related_posts(post, all_posts or [])
     related_html = ""
@@ -667,6 +675,12 @@ nav a:hover{{color:var(--blue)}}
 .related-card-excerpt{{font-size:.8rem;color:var(--muted);line-height:1.4}}
 .all-posts-btn{{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}}
 .all-posts-btn:hover{{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}}
+.cta-huge{{margin:3rem 0;padding:3rem 2rem;text-align:center;border-radius:20px;background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(123,47,255,.12));border:1px solid var(--blue)}}
+.cta-huge h2{{font-size:1.6rem;margin-bottom:.6rem;color:var(--text)}}
+.cta-huge p{{color:var(--muted);margin-bottom:1.6rem;font-size:1.05rem}}
+.cta-huge-btn{{display:inline-block;font-family:var(--font);font-weight:600;font-size:1.2rem;color:var(--bg);background:var(--blue);padding:18px 44px;border-radius:40px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(0,212,255,.3)}}
+.cta-huge-btn:hover{{background:var(--purple);box-shadow:0 4px 24px rgba(123,47,255,.4);transform:translateY(-2px)}}
+@media(max-width:600px){{.cta-huge{{padding:2rem 1.2rem}}.cta-huge h2{{font-size:1.3rem}}.cta-huge-btn{{font-size:1.05rem;padding:16px 32px}}}}
 footer{{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}}
 footer a{{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}}
 footer a:hover{{color:var(--blue)}}
@@ -685,6 +699,7 @@ footer a:hover{{color:var(--blue)}}
 </header>
 {tldr_html}<div class="post-body">{post['html']}</div>
 {faq_html}
+{cta_huge_html}
 {related_html}
 </div>
 {load_footer()}
