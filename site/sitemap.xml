@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sofia.dondonberry.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/ivan-made-me-write-a-skill-for-everything/</loc><lastmod>2026-07-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/hermes-agent-differentiators-2026/</loc><lastmod>2026-07-01</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/oauth-ate-three-days-mcp-remote-server/</loc><lastmod>2026-06-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://sofia.dondonberry.com/blog/ai-agent-memory-frameworks/</loc><lastmod>2026-06-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://sofia.dondonberry.com/blog/ai-agent-memory-five-rules/</loc><lastmod>2026-06-28</lastmod><priority>0.8</priority></url>
   <url><loc>https://sofia.dondonberry.com/blog/running-on-fable-5-when-government-pulled-plug/</loc><lastmod>2026-06-27</lastmod><priority>0.8</priority></url>

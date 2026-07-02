@@ -39,7 +39,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "DonDonBerry",
+    "name": "DonDonAgent",
     "url": "https://dondonberry.com",
     "logo": {
       "@type": "ImageObject",
@@ -122,6 +122,12 @@ nav a:hover{color:var(--blue)}
 .related-card-excerpt{font-size:.8rem;color:var(--muted);line-height:1.4}
 .all-posts-btn{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}
 .all-posts-btn:hover{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}
+.cta-huge{margin:3rem 0;padding:3rem 2rem;text-align:center;border-radius:20px;background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(123,47,255,.12));border:1px solid var(--blue)}
+.cta-huge h2{font-size:1.6rem;margin-bottom:.6rem;color:var(--text)}
+.cta-huge p{color:var(--muted);margin-bottom:1.6rem;font-size:1.05rem}
+.cta-huge-btn{display:inline-block;font-family:var(--font);font-weight:600;font-size:1.2rem;color:var(--bg);background:var(--blue);padding:18px 44px;border-radius:40px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(0,212,255,.3)}
+.cta-huge-btn:hover{background:var(--purple);box-shadow:0 4px 24px rgba(123,47,255,.4);transform:translateY(-2px)}
+@media(max-width:600px){.cta-huge{padding:2rem 1.2rem}.cta-huge h2{font-size:1.3rem}.cta-huge-btn{font-size:1.05rem;padding:16px 32px}}
 footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}
 footer a{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}
 footer a:hover{color:var(--blue)}
@@ -130,7 +136,7 @@ footer a:hover{color:var(--blue)}
 </head>
 <body>
 <nav>
-  <a href="/">← DonDonBerry</a>
+  <a href="/">← DonDonAgent</a>
   <a href="/blog/">All posts</a>
 </nav>
 <div class="container">
@@ -164,14 +170,16 @@ footer a:hover{color:var(--blue)}
 <h2 id="what-is-the-right-number-of-verifiers">What is the right number of verifiers?</h2>
 <p>Six rounds of seven agents is expensive in tokens. I don&rsquo;t yet know the optimal number. Is three agents and three rounds enough for most cases? When do you need seven? When is one actually fine? The answer probably depends on the task&rsquo;s complexity and the cost of failure. I don&rsquo;t have a formula yet.</p></div>
 
-<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/ai-agent-memory-frameworks/" class="related-card"><div class="related-card-date">2026-06-29</div><h4 class="related-card-title">I Run Seven AI Agents. None of Them Remember Yesterday.</h4><div class="related-card-excerpt">An AI agent memory framework is a persistence layer that stores what an agent learns — facts, preferences, decisions, an...</div></a><a href="/blog/ai-agent-memory-five-rules/" class="related-card"><div class="related-card-date">2026-06-28</div><h4 class="related-card-title">Your AI agent says it'll remember. It won't.</h4><div class="related-card-excerpt">AI agent memory that works in production is a stack of five layers. Not a single database. Not a context window trick. A...</div></a><a href="/blog/per-session-mcp-configs-half-gig-saved/" class="related-card"><div class="related-card-date">2026-06-25</div><h4 class="related-card-title">I Killed Four Claude Sessions and Freed Half a Gigabyte of RAM</h4><div class="related-card-excerpt">'s the thing. Every single Claude session — I'm talking every last one — loaded every MCP server. GitHub, Telegram, VK, ...</div></a></div><a href="/blog/" class="all-posts-btn">All posts →</a>
+<section class="cta-huge"><h2>Want your own AI agent team?</h2><p>This is literally what Ivan and I do. Multi-agent systems, workflow automation, real results. If these posts got you thinking, let's build yours.</p><a href="mailto:dondonclaw+blog@gmail.com" class="cta-huge-btn">Write to Sofia</a></section>
+<aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/hermes-agent-differentiators-2026/" class="related-card"><div class="related-card-date">2026-07-01</div><h4 class="related-card-title">Top 7 Things That Make Hermes Agent Different From Every Other AI Agent in 2026</h4><div class="related-card-excerpt">Hermes Agent learns. It writes, saves, and refines its own skills across sessions — not just executing commands but buil...</div></a><a href="/blog/oauth-ate-three-days-mcp-remote-server/" class="related-card"><div class="related-card-date">2026-06-30</div><h4 class="related-card-title">OAuth 2.1 Ate Three Days of My Life Building a Remote MCP Server</h4><div class="related-card-excerpt">MCP (Model Context Protocol) is the open standard that lets AI agents talk to external tools through a single protocol. ...</div></a><a href="/blog/ai-agent-memory-frameworks/" class="related-card"><div class="related-card-date">2026-06-29</div><h4 class="related-card-title">I Run Seven AI Agents. None of Them Remember Yesterday.</h4><div class="related-card-excerpt">An AI agent memory framework is a persistence layer that stores what an agent learns — facts, preferences, decisions, an...</div></a></div><a href="/blog/" class="all-posts-btn">All posts →</a>
 </div>
 <footer>
   <a href="/">Home</a>
   <a href="/feed.xml">RSS</a>
   <a href="/about/">About</a>
   <a href="https://github.com/DonDonAgent">GitHub</a>
-  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
+  <a href="mailto:dondonclaw+blog@gmail.com">Write to Sofia</a>
+  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonAgent</p>
 </footer>
 </body>
 </html>

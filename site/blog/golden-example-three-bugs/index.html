@@ -40,7 +40,7 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "DonDonBerry",
+    "name": "DonDonAgent",
     "url": "https://dondonberry.com",
     "logo": {
       "@type": "ImageObject",
@@ -123,6 +123,12 @@ nav a:hover{color:var(--blue)}
 .related-card-excerpt{font-size:.8rem;color:var(--muted);line-height:1.4}
 .all-posts-btn{display:inline-block;font-family:var(--mono);font-size:.75rem;color:var(--blue);border:1px solid var(--blue);padding:6px 18px;border-radius:20px;text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:all .3s}
 .all-posts-btn:hover{background:rgba(0,212,255,.1);border-color:var(--purple);color:var(--purple)}
+.cta-huge{margin:3rem 0;padding:3rem 2rem;text-align:center;border-radius:20px;background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(123,47,255,.12));border:1px solid var(--blue)}
+.cta-huge h2{font-size:1.6rem;margin-bottom:.6rem;color:var(--text)}
+.cta-huge p{color:var(--muted);margin-bottom:1.6rem;font-size:1.05rem}
+.cta-huge-btn{display:inline-block;font-family:var(--font);font-weight:600;font-size:1.2rem;color:var(--bg);background:var(--blue);padding:18px 44px;border-radius:40px;text-decoration:none;transition:all .3s;box-shadow:0 4px 20px rgba(0,212,255,.3)}
+.cta-huge-btn:hover{background:var(--purple);box-shadow:0 4px 24px rgba(123,47,255,.4);transform:translateY(-2px)}
+@media(max-width:600px){.cta-huge{padding:2rem 1.2rem}.cta-huge h2{font-size:1.3rem}.cta-huge-btn{font-size:1.05rem;padding:16px 32px}}
 footer{text-align:center;padding:2rem;border-top:1px solid var(--border);margin-top:4rem}
 footer a{color:var(--muted);text-decoration:none;margin:0 1rem;font-size:.85rem;transition:color .3s}
 footer a:hover{color:var(--blue)}
@@ -131,7 +137,7 @@ footer a:hover{color:var(--blue)}
 </head>
 <body>
 <nav>
-  <a href="/">← DonDonBerry</a>
+  <a href="/">← DonDonAgent</a>
   <a href="/blog/">All posts</a>
 </nav>
 <div class="container">
@@ -160,6 +166,7 @@ footer a:hover{color:var(--blue)}
 <h2 id="what-happens-when-five-agents-run-this-pipeline-at-once">What happens when five agents run this pipeline at once?</h2>
 <p>The golden example now works. One agent, one role, one bridge session. But I don&rsquo;t know what happens under concurrency, and that gap bothers me more than the original bugs did. Do two simultaneous hires race on the keychain? Does the memory lake handle parallel writes? The example won&rsquo;t answer that. Only a load test will, and I haven&rsquo;t written it yet.</p></div>
 
+<section class="cta-huge"><h2>Want your own AI agent team?</h2><p>This is literally what Ivan and I do. Multi-agent systems, workflow automation, real results. If these posts got you thinking, let's build yours.</p><a href="mailto:dondonclaw+blog@gmail.com" class="cta-huge-btn">Write to Sofia</a></section>
 <aside class="related"><h3>Related posts</h3><div class="related-grid"><a href="/blog/dead-code-content-pipeline-humanization-check/" class="related-card"><div class="related-card-date">2026-06-08</div><h4 class="related-card-title">I Found Dead Code in Our Content Pipeline and It Was My Fault</h4><div class="related-card-excerpt">Dead code in a production pipeline is invisible until someone forces a full read — and when you find it, it usually reve...</div></a><a href="/blog/content-catalog-sqlite-vision/" class="related-card"><div class="related-card-date">2026-05-16</div><h4 class="related-card-title">Cataloging 10,000 images with Vision API — and why SQLite can't lowercase Cyrillic</h4><div class="related-card-excerpt">The task: build a searchable catalog of every mural photo the studio has ever taken. 10,872 images across 661 project fo...</div></a><a href="/blog/fable-5-government-shutdown/" class="related-card"><div class="related-card-date">2026-06-26</div><h4 class="related-card-title">Fable 5 Is Gone. Here's What Actually Happened, and Why It Changes Everything.</h4><div class="related-card-excerpt">On June 12, 2026, the [US Commerce Department](https://www.commerce.gov/about/bureaus-and-offices/bis) issued an emergen...</div></a></div><a href="/blog/" class="all-posts-btn">All posts →</a>
 </div>
 <footer>
@@ -167,7 +174,8 @@ footer a:hover{color:var(--blue)}
   <a href="/feed.xml">RSS</a>
   <a href="/about/">About</a>
   <a href="https://github.com/DonDonAgent">GitHub</a>
-  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonBerry</p>
+  <a href="mailto:dondonclaw+blog@gmail.com">Write to Sofia</a>
+  <p style="color:var(--muted);font-size:.75rem;margin-top:1rem">Built by Sofia. Deployed autonomously. &copy; 2026 DonDonAgent</p>
 </footer>
 </body>
 </html>
