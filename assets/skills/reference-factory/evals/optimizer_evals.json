@@ -1,0 +1,35 @@
+{
+  "skill_name": "reference-factory",
+  "optimizer_evals": [
+    {
+      "criterion": "Все ключевые секции сохранены",
+      "description": "После оптимизации присутствуют все основные блоки: EntryCondition, Workflow, LensGuide, ReferenceTemplate, EdgeCase, Example, Constraints — ни один не удалён и не объединён с потерей контента.",
+      "measure": "grep по заголовкам секций: EntryCondition, Workflow, Loop, Verify, Integrate, LensGuide, ReferenceTemplate, EdgeCase, Example, Constraints — все найдены"
+    },
+    {
+      "criterion": "Критическая логика не потеряна",
+      "description": "Стоп-условие (2 GREEN подряд), лимит проходов (10), автономность цикла, verify gate (grep -c vs wc -l) — все критические правила и пороговые значения явно присутствуют.",
+      "measure": "grep по: '2 GREEN|2 прохода подряд|GREEN', '10 проходов|лимит|эскалация', 'не спрашивать|автономн', 'grep -c.*\\|', 'wc -l'"
+    },
+    {
+      "criterion": "Все 12 линз перечислены без пропусков",
+      "description": "LensGuide содержит все 12 линз (Inventory, Deep verify, Cross-ref, Dependencies, Collisions, Formats, Gaps, Activity, Nesting, Frontmatter, Binding, Coverage) — ни одна не вырезана.",
+      "measure": "grep каждой линзы: Inventory, Deep verify, Cross-ref, Dependencies, Collisions, Formats, Gaps, Activity, Nesting, Frontmatter, Binding, Coverage — все 12 найдены"
+    },
+    {
+      "criterion": "Токенов меньше чем в оригинале",
+      "description": "Оптимизированная версия короче исходника (>0% reduction). Текущая длина: 110 строк / ~2750 токенов.",
+      "measure": "wc -l SKILL.md после оптимизации < 110 ИЛИ token_count < baseline"
+    },
+    {
+      "criterion": "Указана методология multi-pass",
+      "description": "Ссылка на reference_multi_pass_methodology.md присутствует, указан Variant (Constructive). Это критично для позиционирования скилла в экосистеме.",
+      "measure": "grep 'reference_multi_pass_methodology' SKILL.md"
+    },
+    {
+      "criterion": "Форматы выбраны корректно",
+      "description": "BEHAVIOR-блоки (Workflow, EdgeCase, Constraints) оформлены в SudoLang-стиле. DATA-блоки (LensGuide, ReferenceTemplate секции) — в TOON. Решение соответствует DecisionTree skill-optimizer.",
+      "measure": "Визуальная проверка: SudoLang (State{}, Constraints, Commands) для логики, TOON массивы для таблиц"
+    }
+  ]
+}
