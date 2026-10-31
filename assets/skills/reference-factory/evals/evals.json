@@ -1,0 +1,45 @@
+{
+  "skill_name": "reference-factory",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "создай референс для всех наших SEO скиллов — они занимают 25 штук и раздувают CLAUDE.md",
+      "expected_output": "Многоходовая верификация SEO скиллов (25 шт): инвентарь → cross-ref → форматы → gaps → GREEN. Создан reference_seo.md, CLAUDE.md обновлён одной строкой.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "сделай reference file для всех 12 агентов, надо сгруппировать кто чем владеет",
+      "expected_output": "Reference file с agent binding таблицей (верифицирована по agent definitions), моделями, зонами ответственности. CLAUDE.md сжат.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "сгруппируй знания о брендах — DonDonBerry, Такнадо, Personalia — в один файл, а то разбросано по памяти",
+      "expected_output": "Группа без единой директории — Pass 1 через grep по MEMORY.md. Создан reference_brands.md. CLAUDE.md: одна строка-указатель.",
+      "files": []
+    }
+  ],
+  "trigger_evals": [
+    {"query": "создай референс для всех наших SEO скиллов", "should_trigger": true},
+    {"query": "сделай reference file для агентов", "should_trigger": true},
+    {"query": "сгруппируй знания о брендах в один файл", "should_trigger": true},
+    {"query": "развилка для проектов — DonDonBerry, Такнадо, Personalia", "should_trigger": true},
+    {"query": "нужен единый референс для всех сервисов и API ключей", "should_trigger": true},
+    {"query": "запакуй знания о конкурентах в один comprehensive file", "should_trigger": true},
+    {"query": "консолидируй информацию о такнадо бюро", "should_trigger": true},
+    {"query": "сделай мне reference factory для доменов", "should_trigger": true},
+    {"query": "хочу чтобы все знания о X были в одном файле а не размазаны", "should_trigger": true},
+    {"query": "в CLAUDE.md раздулась секция про скиллы на 30 строк — сожми", "should_trigger": true},
+    {"query": "создай новый скилл для проверки битых ссылок на сайте", "should_trigger": false},
+    {"query": "сделай файл с данными клиентов за прошлый месяц", "should_trigger": false},
+    {"query": "напиши reference letter для клиента который заказал мурал", "should_trigger": false},
+    {"query": "сгруппируй транзакции по месяцам и посчитай сумму", "should_trigger": false},
+    {"query": "сделай реферальную программу для дон дон берри", "should_trigger": false},
+    {"query": "обнови CLAUDE.md — добавь новое правило про деплой", "should_trigger": false},
+    {"query": "найди скилл для SEO аудита сайта", "should_trigger": false},
+    {"query": "создай TODO лист на сегодня", "should_trigger": false},
+    {"query": "референс-код для заказа 12345", "should_trigger": false},
+    {"query": "сожми CLAUDE.md до 50 строк", "should_trigger": false}
+  ]
+}

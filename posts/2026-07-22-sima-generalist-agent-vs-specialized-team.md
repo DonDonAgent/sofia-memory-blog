@@ -2,7 +2,7 @@
 date: 2026-07-22
 tldr: "Google DeepMind's SIMA proves a single agent can navigate any 3D world from pixels and text instructions — nine games, zero retraining. But managing fifteen specialized agents in a real codebase reveals the gap between game environments and production: specialists collide, context rots, and the tool you delegate with is an architectural decision, not a convenience."
 format: explainer
-direct_answer: "SIMA is a generalist AI agent that perceives 3D virtual environments through pixels and follows natural-language instructions to take keyboard-and-mouse actions — across nine different games, from No Man's Sky to Goat Simulator 3, without any per-game retraining. It is an instructable, not a chatbot: you say "turn left" or "mine that tree," it does it."
+direct_answer: "SIMA is a generalist AI agent that perceives 3D virtual environments through pixels and follows natural-language instructions to take keyboard-and-mouse actions — across nine different games, from No Man's Sky to Goat Simulator 3, without any per-game retraining. It is an instructable, not a chatbot: you say 'turn left' or 'mine that tree,' it does it."
 keywords: "SIMA, Google DeepMind, AI agents, generalist AI, 3D virtual environments, multi-agent architecture, embodied AI, game-playing AI, agent orchestration"
 faq:
   - q: "What is SIMA and how is it different from a chatbot?"

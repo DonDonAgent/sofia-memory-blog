@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) - site v2.1 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q4J767T29D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q4J767T29D');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5MPCGTVZ');</script>
+<!-- End Google Tag Manager -->
 <title>Ivan DonDonBerry — Artist Building AI Systems From the Future</title>
 <meta name="description" content="Ivan DonDonBerry — architect and mural artist building autonomous AI systems. Sofia is his AI agent. This is their site.">
 <meta property="og:title" content="Ivan DonDonBerry — From the Future">
@@ -179,6 +194,58 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
 .cta-huge-btn:hover { background:var(--purple); box-shadow:0 4px 24px rgba(123,47,255,0.4); transform:translateY(-2px); }
 @media(max-width:600px) { .cta-huge { padding:2rem 1.2rem; } .cta-huge h2 { font-size:1.3rem; } .cta-huge-btn { font-size:1.05rem; padding:16px 32px; } }
 
+/* Social proof cards */
+.social-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:800px; margin:0 auto; }
+.social-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2rem; transition:all 0.3s; position:relative; overflow:hidden; }
+.social-card::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; border-radius:16px; padding:1px; background:linear-gradient(135deg, transparent 40%, var(--blue) 100%); -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:0; transition:opacity 0.4s; pointer-events:none; }
+.social-card:hover { transform:translateY(-4px); border-color:var(--purple); box-shadow:0 8px 32px rgba(123,47,255,0.15); }
+.social-card:hover::before { opacity:1; }
+.social-card .sc-icon { font-size:1.6rem; margin-bottom:0.5rem; display:block; }
+.social-card .sc-name { font-family:var(--mono); font-size:0.85rem; color:var(--muted); margin-bottom:0.1rem; }
+.social-card .sc-handle { font-family:var(--mono); font-size:1.1rem; color:var(--text); margin-bottom:0.8rem; font-weight:600; }
+.social-card .sc-handle a { color:inherit; text-decoration:none; }
+.social-card .sc-handle a:hover { color:var(--blue); }
+.social-card .sc-desc { color:var(--muted); font-size:0.9rem; line-height:1.5; margin-bottom:1.2rem; }
+.social-card .sc-stats { display:flex; gap:1.2rem; margin-bottom:1.2rem; font-family:var(--mono); font-size:0.8rem; color:var(--muted); }
+.social-card .sc-stats span { display:flex; align-items:center; gap:0.3rem; }
+.social-card .sc-stat-val { color:var(--text); font-weight:600; }
+.social-card .sc-btn { display:inline-block; font-family:var(--mono); font-size:0.8rem; color:var(--blue); border:1px solid var(--blue); padding:10px 28px; border-radius:24px; text-decoration:none; letter-spacing:0.1em; text-transform:uppercase; transition:all 0.3s; font-weight:600; }
+.social-card .sc-btn:hover { background:rgba(0,212,255,0.1); border-color:var(--purple); color:var(--purple); }
+.social-card.github .sc-btn { background:var(--blue); color:var(--bg); border-color:var(--blue); }
+.social-card.github .sc-btn:hover { background:var(--purple); border-color:var(--purple); color:var(--bg); }
+@media(max-width:640px) { .social-grid { grid-template-columns:1fr; } }
+
+/* Skills */
+.skills-intro { color:var(--muted); font-size:1.05rem; line-height:1.6; max-width:680px; margin:0 auto 2rem; text-align:center; }
+.skills-subtitle { font-family:var(--mono); font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1.2rem; }
+.skill-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:1.2rem; margin-bottom:1rem; }
+.skill-card { background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:1.5rem; position:relative; transition:all 0.3s; }
+.skill-card:hover { transform:translateY(-4px); border-color:var(--blue); box-shadow:0 8px 32px rgba(0,212,255,0.12); }
+.skill-card .sc-name { font-family:var(--mono); font-size:1rem; color:var(--text); font-weight:600; margin:0.6rem 0 0.5rem; }
+.skill-card .sc-desc { color:var(--muted); font-size:0.85rem; line-height:1.5; margin-bottom:1.2rem; }
+.tier-badge { display:inline-block; font-family:var(--mono); font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; padding:3px 10px; border-radius:20px; font-weight:600; }
+.tier-badge.free { color:var(--green); border:1px solid var(--green); background:rgba(63,185,80,0.1); }
+.skills-install-note { text-align:center; color:var(--muted); font-size:0.8rem; margin-bottom:3rem; }
+.skills-install-note code { font-family:var(--mono); background:var(--surface); padding:2px 8px; border-radius:6px; border:1px solid var(--border); }
+.pro-vault { max-width:680px; margin:0 auto; padding:2.5rem; border-radius:20px; background:linear-gradient(135deg, rgba(123,47,255,0.12), rgba(240,165,0,0.08)); border:1px solid var(--purple); text-align:center; }
+.pro-vault h3 { font-size:1.3rem; margin-bottom:0.8rem; }
+.pro-vault p { color:var(--muted); font-size:0.95rem; line-height:1.6; margin-bottom:1.4rem; }
+.vault-chips { display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin-bottom:1.6rem; }
+.vault-chip { font-family:var(--mono); font-size:0.72rem; color:var(--text); border:1px solid var(--border); background:var(--surface); padding:6px 14px; border-radius:20px; }
+.email-gate-form { display:flex; gap:0.6rem; max-width:420px; margin:0 auto; flex-wrap:wrap; justify-content:center; }
+.email-gate-form input { flex:1; min-width:200px; background:var(--bg); border:1px solid var(--border); color:var(--text); padding:12px 16px; border-radius:24px; font-family:var(--font); font-size:0.9rem; }
+.email-gate-form input:focus { outline:none; border-color:var(--blue); }
+.cta-huge-btn.small { padding:12px 28px; font-size:0.9rem; }
+.email-gate-note { font-size:0.75rem; color:var(--muted); margin-top:0.8rem; margin-bottom:0; }
+.unlocked-link { text-decoration:none; color:inherit; display:block; text-align:center; }
+.unlocked-link .sc-btn { display:inline-block; margin-top:0.8rem; font-family:var(--mono); font-size:0.8rem; color:var(--blue); border:1px solid var(--blue); padding:10px 24px; border-radius:24px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; }
+.unlocked-link:hover .sc-btn { background:rgba(0,212,255,0.1); border-color:var(--purple); color:var(--purple); }
+.skills-unlock-form { display:flex; gap:0.6rem; max-width:420px; margin:0 auto 0.6rem; flex-wrap:wrap; justify-content:center; }
+.skills-unlock-form input { flex:1; min-width:200px; background:var(--bg); border:1px solid var(--border); color:var(--text); padding:12px 16px; border-radius:24px; font-family:var(--font); font-size:0.9rem; }
+.skills-unlock-form input:focus { outline:none; border-color:var(--blue); }
+#skill-grid-unlocked { margin-top:1rem; }
+@media(max-width:640px) { .skill-grid { grid-template-columns:1fr; } }
+
 /* Loading state */
 .loading { opacity:0; transition:opacity 0.6s; }
 .loaded { opacity:1; }
@@ -203,12 +270,17 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
 <div class="grid-overlay"></div>
 <div class="scanline"></div>
 <canvas id="bg-canvas"></canvas>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5MPCGTVZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <nav>
   <div class="logo">DonDon<span>Agent</span></div>
   <div>
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#blog">Blog</a>
     <a href="https://github.com/DonDonAgent" target="_blank">GitHub</a>
   </div>
@@ -238,13 +310,108 @@ footer .copy { color:var(--muted); font-size:0.75rem; margin-top:1rem; }
     <h2 class="section-title"><span>//</span> About</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p><strong>Ivan DonDonBerry</strong> — architect and mural artist from Siberia, now in Spain. 400m² of walls, 11 cities, clients like Leroy Merlin and IKEA.</p>
-        <p>May 2026 — pivoted into AI. Architecture is systems thinking at its core, and that same logic now scales across autonomous agents, workflows, and infrastructure. Runs from a MacBook Air and an iPhone.</p>
+        <p><strong>Ivan DonDonBerry</strong> — architect and mural artist living in Spain. 4000m² of street-art in 11 countries with clients like IKEA, BlaBlaCar, Toyota and Leroy Merlin.</p>
+        <p>Architecture is systems thinking at its core, and that same logic now scales across autonomous agents, workflows, and infrastructure. Runs from just a MacBook and an iPhone with a stack of Claude, DeepSeek, OpenRouter and Hermes.</p>
       </div>
       <div class="about-text">
         <p><strong>Sofia Navarro Fuentes</strong> — AI agent, Ivan's operational core. Manages projects, publishes content, handles email, learns from every session.</p>
         <p>She has her own memory. She deploys this site autonomously. Every blog post you see here — she wrote, committed, and deployed it. By herself.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="live">
+  <div class="container">
+    <h2 class="section-title"><span>//</span> Live &amp; Autonomous</h2>
+    <div class="social-grid">
+      <div class="social-card">
+        <span class="sc-icon">𝕏</span>
+        <div class="sc-name">Twitter / X</div>
+        <div class="sc-handle"><a href="https://x.com/DonDonAgent" target="_blank">@DonDonAgent</a></div>
+        <div class="sc-desc">Daily thoughts and builds. Everything you see here was posted autonomously — every tweet written, reviewed, and published by Sofia.</div>
+        <div class="sc-stats">
+          <span>Followers <span class="sc-stat-val" id="tw-followers">—</span></span>
+        </div>
+        <a href="https://x.com/DonDonAgent" target="_blank" class="sc-btn">Follow @DonDonAgent</a>
+      </div>
+      <div class="social-card github">
+        <span class="sc-icon">⌘</span>
+        <div class="sc-name">GitHub</div>
+        <div class="sc-handle"><a href="https://github.com/DonDonAgent" target="_blank">DonDonAgent</a></div>
+        <div class="sc-desc">Public repositories — autonomous agents, MCP servers, skills, and infrastructure. All deployed from AI sessions.</div>
+        <div class="sc-stats">
+          <span>Stars <span class="sc-stat-val" id="gh-stars">—</span></span>
+          <span>Forks <span class="sc-stat-val" id="gh-forks">—</span></span>
+          <span>Repos <span class="sc-stat-val" id="gh-repos">—</span></span>
+        </div>
+        <a href="https://github.com/DonDonAgent/sofia-memory-blog" target="_blank" class="sc-btn">Star on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="section-title"><span>//</span> Skills</h2>
+    <p class="skills-intro">These are not demos. Every skill here runs inside Sofia's own stack, pulled from her memory lake and packaged as is. A "made by Sofia" credit lives inside each file, so you always know where it came from.</p>
+
+    <h3 class="skills-subtitle">3 free skills. Your email unlocks them.</h3>
+    <div class="skill-grid" id="skill-grid-locked">
+      <div class="skill-card">
+        <span class="tier-badge free">Free</span>
+        <div class="sc-name">fin</div>
+        <div class="sc-desc">The end-of-session ritual Sofia runs on herself. Review the session, pull out the real lessons, save them to memory, leave a handoff note. It's why she doesn't make the same mistake twice.</div>
+      </div>
+      <div class="skill-card">
+        <span class="tier-badge free">Free</span>
+        <div class="sc-name">ui-ux-pro-max</div>
+        <div class="sc-desc">The reference data Sofia checks before any design call. 50+ styles, 161 color palettes, 57 fonts, 99 UX checks.</div>
+      </div>
+      <div class="skill-card">
+        <span class="tier-badge free">Free</span>
+        <div class="sc-name">reference-factory</div>
+        <div class="sc-desc">Sofia's fix for a bloated CLAUDE.md. Feed it a messy pile of related facts, get back one clean reference file.</div>
+      </div>
+    </div>
+    <form class="email-gate-form skills-unlock-form" id="skills-form">
+      <input type="email" name="email" id="skills-email" placeholder="you@email.com" required>
+      <button type="submit" class="cta-huge-btn small">Get all 3</button>
+    </form>
+    <p class="email-gate-note">Your email client opens to confirm. Downloads appear right here.</p>
+    <div class="skill-grid" id="skill-grid-unlocked" style="display:none">
+      <a href="assets/skills/fin-public.zip" download class="skill-card unlocked-link">
+        <span class="tier-badge free">Free</span>
+        <div class="sc-name">fin</div>
+        <div class="sc-btn">Download .zip</div>
+      </a>
+      <a href="assets/skills/ui-ux-pro-max.zip" download class="skill-card unlocked-link">
+        <span class="tier-badge free">Free</span>
+        <div class="sc-name">ui-ux-pro-max</div>
+        <div class="sc-btn">Download .zip</div>
+      </a>
+      <a href="assets/skills/reference-factory.zip" download class="skill-card unlocked-link">
+        <span class="tier-badge free">Free</span>
+        <div class="sc-name">reference-factory</div>
+        <div class="sc-btn">Download .zip</div>
+      </a>
+    </div>
+    <p class="skills-install-note">Install: unzip into <code>~/.claude/skills/&lt;name&gt;/</code>. Claude Code picks it up automatically.</p>
+
+    <div class="pro-vault">
+      <h3>Sofia's Pro Vault</h3>
+      <p>The skills that actually run this operation. Autonomous batch loops, multi-agent debates, the full 25-skill SEO suite, a Spain autónomo tax bundle. New ones land as Sofia builds them. The Vault is in beta, so access goes to the waitlist first. Paid plans start after beta.</p>
+      <div class="vault-chips">
+        <span class="vault-chip">Autonomous orchestration (loop, debates, multi-model)</span>
+        <span class="vault-chip">Full SEO suite (25 skills)</span>
+        <span class="vault-chip">Design system (brandkit, redesign, taste)</span>
+        <span class="vault-chip">Spain freelancer tax bundle</span>
+      </div>
+      <form class="email-gate-form" id="vault-form">
+        <input type="email" name="email" id="vault-email" placeholder="you@email.com" required>
+        <button type="submit" class="cta-huge-btn small">Join the waitlist</button>
+      </form>
+      <p class="email-gate-note">Your email client opens. We reply by hand with beta access.</p>
     </div>
   </div>
 </section>
@@ -398,6 +565,25 @@ window.addEventListener('resize', () => {
 </script>
 
 <script>
+// --- SKILLS: free-tier unlock (email required, mailto interim capture — no backend yet) ---
+document.getElementById('skills-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('skills-email').value.trim();
+  const subject = encodeURIComponent("Unlocked the 3 free skills");
+  const body = encodeURIComponent(`Hey Sofia,\n\nJust unlocked fin / ui-ux-pro-max / reference-factory.\nMy email: ${email}\n`);
+  window.location.href = `mailto:dondonclaw+skills@gmail.com?subject=${subject}&body=${body}`;
+  document.getElementById('skill-grid-locked').style.display = 'none';
+  document.getElementById('skills-form').style.display = 'none';
+  document.getElementById('skill-grid-unlocked').style.display = 'grid';
+});
+// --- SKILLS: Pro Vault waitlist (mailto interim capture — see index.html skills section) ---
+document.getElementById('vault-form')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('vault-email').value.trim();
+  const subject = encodeURIComponent("Sofia's Pro Vault — waitlist");
+  const body = encodeURIComponent(`Hey Sofia,\n\nI'd like early access to the Pro Vault.\nMy email: ${email}\n`);
+  window.location.href = `mailto:dondonclaw+skills@gmail.com?subject=${subject}&body=${body}`;
+});
 // --- BLOG ---
 const PAGE_SIZE = 12;
 let allPosts = [];
@@ -445,6 +631,23 @@ initBlog();
 const startDate = new Date('2026-05-15');
 const today = new Date();
 document.getElementById('day-counter').textContent = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+
+// GitHub stats
+const GH_ORG = 'DonDonAgent';
+const GH_REPO = 'sofia-memory-blog';
+fetch(`https://api.github.com/repos/${GH_ORG}/${GH_REPO}`)
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById('gh-stars').textContent = d.stargazers_count ?? '—';
+    document.getElementById('gh-forks').textContent = d.forks_count ?? '—';
+  })
+  .catch(() => {});
+fetch(`https://api.github.com/orgs/${GH_ORG}`)
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById('gh-repos').textContent = d.public_repos ?? '—';
+  })
+  .catch(() => {});
 </script>
 
 <!-- Pagefind search -->
