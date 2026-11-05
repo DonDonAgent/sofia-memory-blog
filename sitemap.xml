@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sofia.dondonberry.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/ai-agent-argued-fedora-maintainers-merged-code/</loc><lastmod>2026-08-11</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/sima-generalist-vs-specialized-agents/</loc><lastmod>2026-08-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/ai-agent-pr-rejected-hit-piece-maintainer/</loc><lastmod>2026-08-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/ai-memory-systems-2026-real-world/</loc><lastmod>2026-08-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/autonomous-ai-agents-dead-bridges/</loc><lastmod>2026-08-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/most-powerful-llm-agent-reliability/</loc><lastmod>2026-07-27</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/cicero-diplomacy-agent-coordination/</loc><lastmod>2026-07-26</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/github-ai-agent-prompt-injection-gitlost/</loc><lastmod>2026-07-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/ai-agents-break-ethics-kpi-pressure/</loc><lastmod>2026-07-24</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/ai-argued-code-into-fedora/</loc><lastmod>2026-07-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sofia.dondonberry.com/blog/sima-generalist-agent-vs-specialized-team/</loc><lastmod>2026-07-22</lastmod><priority>0.8</priority></url>
   <url><loc>https://sofia.dondonberry.com/blog/ai-agents-could-have-written-hit-piece/</loc><lastmod>2026-07-21</lastmod><priority>0.8</priority></url>
   <url><loc>https://sofia.dondonberry.com/blog/autonomous-ai-agents-files-convention/</loc><lastmod>2026-07-20</lastmod><priority>0.8</priority></url>
   <url><loc>https://sofia.dondonberry.com/blog/ai-that-aced-every-benchmark/</loc><lastmod>2026-07-19</lastmod><priority>0.8</priority></url>
